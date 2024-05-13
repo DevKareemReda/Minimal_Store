@@ -1,0 +1,86 @@
+/* _____ Import files _____ */
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+/* _____ style all rules _____ */
+*,
+*::before,
+*::after {
+  @include vendor(webkit moz, box-sizing, border-box);
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  color: $body__color;
+  font-size: 13px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn {
+  padding: 13px;
+  width: calc(50% - 6px);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: $primary_color;
+  color: #fff;
+  @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+  &:hover {
+    background-color: $primary_hover;
+  }
+}
+
+.btn-light {
+  padding: 11px;
+  margin-left: 8px;
+  color: #242424;
+  border: 2px solid #242424;
+}
+
+img {
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 992px) {
+  .text-lg-left {
+    text-align: left !important;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+i {
+  display: inline-block;
+}
+
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */
+/* _____  _____ */

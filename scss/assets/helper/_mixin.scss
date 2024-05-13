@@ -1,0 +1,7 @@
+@mixin vendor($pref, $key, $val) {
+  @each $prefixes in $pref {
+    -#{$prefixes}-#{$key}: $val 
+  }
+
+  #{$key}: $val
+}

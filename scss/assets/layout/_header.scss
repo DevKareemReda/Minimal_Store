@@ -1,0 +1,336 @@
+/* _____ style header-nav _____ */
+.header-nav {
+  padding: 39px 0;
+  .row {
+    position: relative;
+  }
+  .menu {
+    @media screen and (max-width: 991px) {
+      background-color: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      flex-direction: column;
+      padding-top: 80px;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      @include vendor(webkit moz o, transition, 0.4s);
+      &.active {
+        padding-top: 25px;
+      }
+    }
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    li {
+      margin: 0 10px;
+      @media screen and (max-width: 991px) {
+        margin-bottom: 10px;
+      }
+
+      a {
+        display: block;
+        color: #252525;
+        text-transform: $font_capitalize;
+        padding: 10px;
+        font-weight: 400;
+        @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+        @media screen and (max-width: 991px) {
+          padding-bottom: 8px;
+          font-weight: bold;
+          font-size: 18px;
+          color: hsla(0, 0%, 100%, 0.85);
+          text-transform: $font_capitalize;
+          position: relative;
+          display: inline-block;
+          padding: 10px 0;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: hsla(0, 0%, 100%, 0.15);
+            @include vendor(webkit moz o, transform, scaleX(0));
+            @include vendor(webkit moz o, transition, 0.1s ease-out);
+          }
+          &:hover::before,
+          &.active::before {
+            @include vendor(webkit moz o, transform, scaleY(1));
+          }
+          &:hover {
+            color: hsla(0, 0%, 100%, 0.85) !important;
+          }
+          &.active {
+            color: #fff !important;
+          }
+        }
+
+        &.active,
+        &:hover {
+          color: #848484;
+        }
+      }
+    }
+  }
+
+  .trigger-bar {
+    display: none;
+    cursor: pointer;
+    span {
+      width: 20px;
+      height: 1px;
+      display: block;
+      margin-bottom: 5px;
+      background-color: rgba(0, 0, 0, 0.75);
+      @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+    }
+    &.active span:first-child {
+      @include vendor(webkit moz o, transform, translateY(5px) rotate(45deg));
+    }
+    &.active span:nth-child(2) {
+      opacity: 0;
+    }
+    &.active span:last-child {
+      @include vendor(webkit moz o, transform, translateY(-5px) rotate(-45deg));
+      margin-bottom: 0;
+    }
+    @media screen and (max-width: 991px) {
+      display: block;
+    }
+  }
+  .close-nav {
+    top: 20px;
+    width: 50px;
+    right: 25px;
+    height: 50px;
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+    text-align: center;
+    border: 1px solid hsla(0, 0%, 100%, 0.656);
+    line-height: 54px;
+    @include vendor(webkit moz, border-radius, 50%);
+    @include vendor(webkit moz o, transition, 0.1s ease-out);
+    color: #fff;
+    .lnr-cross {
+      font-size: 17px;
+    }
+    &:hover {
+      border-color: #fff;
+    }
+  }
+  .search-parent {
+    color: #000;
+    > i {
+      cursor: pointer;
+      padding: 8px 11px;
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    }
+  }
+  .fa-xmark {
+    background: #f4f4f4;
+    text-align: center;
+
+    color: #000;
+    font-weight: bold;
+    @include vendor(webkit moz, border-radius, 2px 2px 0 0);
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  .search {
+    position: relative;
+    width: 240px;
+    @media screen and (max-width: 991px) {
+      right: 0;
+      left: 0;
+      z-index: 1;
+      width: calc(100% - 30px);
+      margin: auto;
+      padding: 30px;
+      position: absolute;
+      background: #f4f4f4;
+      border-bottom: 1px solid #fff;
+      @include vendor(webkit moz, box-shadow, 0 3px 7px rgba(0, 0, 0, 0.2));
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+
+    input {
+      outline: none;
+      font-size: 12px;
+      font-family: inherit;
+      height: 38px;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      padding-left: 34px;
+      padding-right: 50px;
+      color: #141414;
+      @media screen and (max-width: 991px) {
+        background-color: transparent;
+        border-bottom: 1px solid #ccc;
+      }
+
+      &:focus {
+        border-bottom: 3px solid #ddd;
+        @media screen and (max-width: 991px) {
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+
+    > .fa-magnifying-glass {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      @include vendor(webkit moz o, transform, translate(-50%, -50%));
+      color: #ddd;
+      font-size: 10px;
+      @media screen and (max-width: 991px) {
+        left: -webkit-calc(100% - 50px);
+        left: -moz-calc(100% - 50px);
+        left: calc(100% - 50px);
+      }
+    }
+  }
+
+  .shopping {
+    margin-left: 50px;
+    margin-top: 5px;
+    z-index: 44;
+    position: relative;
+
+    > span {
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 14px;
+        top: -4px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        background-color: $primary_color;
+        @include vendor(webkit moz, border-radius, 50%);
+        font-size: 8px;
+      }
+
+      &::before {
+        content: attr(data-count);
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .topnav-drop {
+      width: 320px;
+      background-color: #fff;
+      border: 1px solid #ececec;
+      margin-top: 5px;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      padding: 22px 15px;
+      opacity: 0;
+      visibility: hidden;
+      @include vendor(webkit moz o, transition, 0.2s);
+      &::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        right: 10px;
+        border-width: 4px;
+        border-style: solid;
+        border-color: transparent transparent #b70303 transparent;
+      }
+      .woocommerce {
+        li {
+          margin-bottom: 14px;
+        }
+        span.close {
+          float: right;
+          cursor: pointer;
+          color: #c3c3c3;
+          font-size: 16px;
+          position: absolute;
+          right: 15px;
+          &:hover {
+            color: #7f7f7f;
+          }
+        }
+        img {
+          width: 60px;
+          height: 60px;
+          margin-right: 15px;
+        }
+        div {
+          font-size: 11px;
+          a {
+            color: #000;
+            text-transform: $font_capitalize;
+            margin: 4px 0 15px;
+            font-weight: 400;
+            &:hover {
+              color: $primary_color;
+            }
+          }
+          .woocommerce-quantity {
+            color: #535353;
+          }
+        }
+      }
+      .woocommerce-total {
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        padding: 20px 0;
+        font-size: 11px;
+      }
+      .amount {
+        font-weight: 700;
+        float: right;
+        font-size: 15px;
+      }
+    }
+    &:hover .topnav-drop {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 333px) {
+  .flex-smmm-column {
+    flex-direction: column;
+  }
+  .shopping {
+    margin-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 199px) {
+  .flex-smmm-column {
+    flex-direction: row;
+    text-align: center;
+    justify-content: center !important;
+  }
+}

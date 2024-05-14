@@ -7,36 +7,31 @@ triggerBar.onclick = function () {
 
 let closeNav = document.querySelector(".close-nav");
 closeNav.onclick = function () {
-  this.parentElement.classList.remove("active");
+  this.parentElement.parentElement.classList.remove("active");
   triggerBar.classList.remove("active");
 };
 
 window.onkeydown = function (e) {
   if (e.key === "Escape" || e.keyCode === 27) {
-    closeNav.parentElement.classList.remove("active");
+    closeNav.parentElement.parentElement.classList.remove("active");
     triggerBar.classList.remove("active");
   }
 };
 
-let searchIcon = document.querySelector(
-  ".search-parent > .fa-magnifying-glass"
-);
-searchIcon.onclick = function () {
-  if (!this.nextElementSibling.classList.contains("active")) {
+let searchParent = document.querySelector(".search-parent > i");
+
+searchParent.onclick = function () {
+  this.classList.toggle("active");
+  if (this.classList.contains("active")) {
     this.classList.replace("fa-magnifying-glass", "fa-xmark");
+    this.nextElementSibling.classList.add("active");
   } else {
     this.classList.replace("fa-xmark", "fa-magnifying-glass");
+    this.nextElementSibling.classList.remove("active");
   }
-  this.nextElementSibling.classList.toggle("active");
 };
 
-// let allSlider = document.querySelectorAll(".slide-hero");
-// let prev = document.querySelector(".arrows .prev");
-// let next = document.querySelector(".arrows .next");
-// let counterImage = 0;
-
-// function nextSlider() {
-//   counterImage === allSlider.length - 1 ? (counterImage = 0) : counterImage++;
-//   allSlider[counterImage].classList.add("active")
-// }
-// next.onclick = nextSlider;
+let shopping = document.querySelector(".shopping > span");
+shopping.onclick = function () {
+  this.previousElementSibling.classList.toggle("active");
+};

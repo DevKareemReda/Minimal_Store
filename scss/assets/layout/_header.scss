@@ -4,76 +4,85 @@
   .row {
     position: relative;
   }
-  .menu {
+  main {
     @media screen and (max-width: 991px) {
-      background-color: rgba(0, 0, 0, 0.9);
       position: fixed;
       inset: 0;
       width: 100%;
       height: 100%;
-      text-align: center;
-      flex-direction: column;
-      padding-top: 80px;
       z-index: 100;
       opacity: 0;
       visibility: hidden;
-      @include vendor(webkit moz o, transition, 0.4s);
+      background-color: rgba(0, 0, 0, 0.9);
+      @include vendor(webkit moz o, transition, 0.2s ease-in all);
       &.active {
-        padding-top: 25px;
+        opacity: 1;
+        visibility: visible;
       }
     }
-    &.active {
-      opacity: 1;
-      visibility: visible;
+    &.active .menu {
+      padding-top: 54px;
     }
-    li {
-      margin: 0 10px;
+    .menu {
       @media screen and (max-width: 991px) {
-        margin-bottom: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 100px;
+        // @include vendor(webkit moz o, transition, 0.4s all);
+        transition: 0.4s padding-top;
       }
-
-      a {
-        display: block;
-        color: #252525;
-        text-transform: $font_capitalize;
-        padding: 10px;
-        font-weight: 400;
-        @include vendor(webkit moz o, transition, 0.2s ease-in-out);
-        @media screen and (max-width: 991px) {
-          padding-bottom: 8px;
-          font-weight: bold;
-          font-size: 18px;
-          color: hsla(0, 0%, 100%, 0.85);
-          text-transform: $font_capitalize;
-          position: relative;
-          display: inline-block;
-          padding: 10px 0;
-          &::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: hsla(0, 0%, 100%, 0.15);
-            @include vendor(webkit moz o, transform, scaleX(0));
-            @include vendor(webkit moz o, transition, 0.1s ease-out);
-          }
-          &:hover::before,
-          &.active::before {
-            @include vendor(webkit moz o, transform, scaleY(1));
-          }
-          &:hover {
-            color: hsla(0, 0%, 100%, 0.85) !important;
-          }
-          &.active {
-            color: #fff !important;
-          }
+      li {
+        margin: 0 10px;
+        &:last-of-type {
+          margin-bottom: 0 !important;
         }
+        @media screen and (max-width: 991px) {
+          margin-bottom: 10px;
+        }
+        a {
+          display: block;
+          color: #252525;
+          text-transform: $font_capitalize;
+          padding: 10px;
+          font-weight: 400;
+          @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+          @media screen and (max-width: 991px) {
+            padding-bottom: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            color: hsla(0, 0%, 100%, 0.85);
+            text-transform: $font_capitalize;
+            position: relative;
+            display: inline-block;
+            padding: 10px 0;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background-color: hsla(0, 0%, 100%, 0.15);
+              @include vendor(webkit moz o, transform, scaleX(0));
+              @include vendor(webkit moz o, transition, 0.1s ease-out);
+            }
+            &:hover::before,
+            &.active::before {
+              @include vendor(webkit moz o, transform, scaleY(1));
+            }
+            &:hover {
+              color: hsla(0, 0%, 100%, 0.85) !important;
+            }
+            &.active {
+              color: #fff !important;
+            }
+          }
 
-        &.active,
-        &:hover {
-          color: #848484;
+          &.active,
+          &:hover {
+            color: #848484;
+          }
         }
       }
     }
@@ -125,6 +134,11 @@
       border-color: #fff;
     }
   }
+  .sm-column {
+    @media screen and (max-width: 333px) {
+      flex-direction: column !important;
+    }
+  }
   .search-parent {
     color: #000;
     > i {
@@ -134,16 +148,16 @@
         display: none;
       }
     }
-  }
-  .fa-xmark {
-    background: #f4f4f4;
-    text-align: center;
+    .fa-xmark {
+      background: #f4f4f4;
+      text-align: center;
 
-    color: #000;
-    font-weight: bold;
-    @include vendor(webkit moz, border-radius, 2px 2px 0 0);
-    &:hover {
-      background-color: #fff;
+      color: #000;
+      font-weight: bold;
+      @include vendor(webkit moz, border-radius, 2px 2px 0 0);
+      &:hover {
+        background-color: #f1f1f1;
+      }
     }
   }
   .search {
@@ -152,7 +166,6 @@
     @media screen and (max-width: 991px) {
       right: 0;
       left: 0;
-      z-index: 1;
       width: calc(100% - 30px);
       margin: auto;
       padding: 30px;
@@ -164,6 +177,9 @@
       &.active {
         display: block;
       }
+    }
+    @media screen  and (max-width: 333px){
+      z-index: 1;
     }
 
     input {
@@ -204,109 +220,113 @@
       }
     }
   }
+}
 
-  .shopping {
-    margin-left: 50px;
-    margin-top: 5px;
-    z-index: 44;
-    position: relative;
+.shopping {
+  margin-left: 50px;
+  margin-top: 5px;
+  position: relative;
+  @media screen and (max-width: 333px) {
+    margin-left: 0 !important;
+  }
 
-    > span {
-      cursor: pointer;
+  > span {
+    cursor: pointer;
 
-      &::before {
-        content: "";
-        position: absolute;
-        right: 14px;
-        top: -4px;
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        background-color: $primary_color;
-        @include vendor(webkit moz, border-radius, 50%);
-        font-size: 8px;
-      }
-
-      &::before {
-        content: attr(data-count);
-        text-align: center;
-        color: #fff;
-      }
-    }
-
-    .topnav-drop {
-      width: 320px;
-      background-color: #fff;
-      border: 1px solid #ececec;
-      margin-top: 5px;
+    &::before {
+      content: "";
       position: absolute;
-      right: 0;
-      top: 100%;
-      padding: 22px 15px;
-      opacity: 0;
-      visibility: hidden;
-      @include vendor(webkit moz o, transition, 0.2s);
-      &::before {
-        content: "";
-        position: absolute;
-        top: -7px;
-        right: 10px;
-        border-width: 4px;
-        border-style: solid;
-        border-color: transparent transparent #b70303 transparent;
+      right: 14px;
+      top: -4px;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      background-color: $primary_color;
+      @include vendor(webkit moz, border-radius, 50%);
+      font-size: 8px;
+    }
+
+    &::before {
+      content: attr(data-count);
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  .topnav-drop {
+    width: 320px;
+    background-color: #fff;
+    border: 1px solid #ececec;
+    margin-top: 5px;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    padding: 22px 15px;
+    opacity: 0;
+    visibility: hidden;
+    @include vendor(webkit moz o, transition, 0.2s);
+    &::before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      right: 10px;
+      border-width: 4px;
+      border-style: solid;
+      border-color: transparent transparent #b70303 transparent;
+    }
+
+    .woocommerce {
+      li {
+        margin-bottom: 14px;
       }
-      .woocommerce {
-        li {
-          margin-bottom: 14px;
-        }
-        span.close {
-          float: right;
-          cursor: pointer;
-          color: #c3c3c3;
-          font-size: 16px;
-          position: absolute;
-          right: 15px;
-          &:hover {
-            color: #7f7f7f;
-          }
-        }
-        img {
-          width: 60px;
-          height: 60px;
-          margin-right: 15px;
-        }
-        div {
-          font-size: 11px;
-          a {
-            color: #000;
-            text-transform: $font_capitalize;
-            margin: 4px 0 15px;
-            font-weight: 400;
-            &:hover {
-              color: $primary_color;
-            }
-          }
-          .woocommerce-quantity {
-            color: #535353;
-          }
-        }
-      }
-      .woocommerce-total {
-        border-top: 1px solid #ececec;
-        border-bottom: 1px solid #ececec;
-        padding: 20px 0;
-        font-size: 11px;
-      }
-      .amount {
-        font-weight: 700;
+      span.close {
         float: right;
-        font-size: 15px;
+        cursor: pointer;
+        color: #c3c3c3;
+        font-size: 16px;
+        position: absolute;
+        right: 15px;
+        &:hover {
+          color: #7f7f7f;
+        }
+      }
+      img {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+      }
+      div {
+        font-size: 11px;
+        a {
+          color: #000;
+          text-transform: $font_capitalize;
+          margin: 4px 0 15px;
+          font-weight: 400;
+          &:hover {
+            color: $primary_color;
+          }
+        }
+        .woocommerce-quantity {
+          color: #535353;
+        }
       }
     }
-    &:hover .topnav-drop {
-      opacity: 1;
-      visibility: visible;
+    .woocommerce-total {
+      border-top: 1px solid #ececec;
+      border-bottom: 1px solid #ececec;
+      padding: 20px 0;
+      font-size: 11px;
     }
+    .amount {
+      font-weight: 700;
+      float: right;
+      font-size: 15px;
+    }
+  }
+  .topnav-drop.active {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -315,22 +335,5 @@
   .container-md,
   .container-sm {
     max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 333px) {
-  .flex-smmm-column {
-    flex-direction: column;
-  }
-  .shopping {
-    margin-left: 0 !important;
-  }
-}
-
-@media screen and (max-width: 199px) {
-  .flex-smmm-column {
-    flex-direction: row;
-    text-align: center;
-    justify-content: center !important;
   }
 }

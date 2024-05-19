@@ -1,0 +1,104 @@
+.slider-parent {
+  .container {
+    position: relative;
+    @media screen and (min-width: 992px) {
+      max-width: 100%;
+    }
+    .slider-items {
+      margin: auto;
+      position: relative;
+      display: none;
+      visibility: hidden;
+      &.fade {
+        display: block;
+        visibility: visible;
+        animation: fade 1s ease-in-out both;
+      }
+
+      @include keyframe(fade) {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      img {
+        object-fit: cover;
+        max-width: 100%;
+      }
+    }
+    .slider-caption {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      &.left {
+        left: 14%;
+        text-align: left;
+        @media screen and (max-width: 768px) {
+          text-align: center;
+          width: 100%;
+          left: 0;
+        }
+      }
+      &.right {
+        right: 14%;
+        text-align: left;
+        @media screen and (max-width: 768px) {
+          text-align: center;
+          width: 100%;
+          right: 0;
+        }
+      }
+      .headline {
+        color: #0a0a0a;
+        @media screen and (max-width: 576px) {
+          font-size: 20px;
+        }
+      }
+      .headprice {
+        color: #8c8c8c;
+        font-size: 16px;
+        @media screen and (max-width: 768px) {
+          text-align: center;
+        }
+        @media screen and (max-width: 576px) {
+          font-size: 14px;
+        }
+      }
+    }
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      @media screen and (max-width: 400px) {
+        position: absolute;
+        top: 90%;
+      }
+      svg {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        polyline {
+          @include vendor(webkit moz o, transition, 0.2s ease);
+        }
+        &:hover polyline {
+          stroke-width: 40px;
+        }
+      }
+    }
+    .slider-prev {
+      left: 50px;
+      @media screen and (max-width: 400px) {
+        left: 40%;
+      }
+    }
+    .slider-next {
+      right: 50px;
+      @media screen and (max-width: 400px) {
+        right: 40%;
+      }
+    }
+  }
+}

@@ -1,7 +1,31 @@
 @mixin vendor($pref, $key, $val) {
   @each $prefixes in $pref {
-    -#{$prefixes}-#{$key}: $val 
+    -#{$prefixes}-#{$key}: $val;
   }
 
-  #{$key}: $val
+  #{$key}: $val;
 }
+
+$sperator: '@';
+
+@mixin keyframe($animation_name) {
+  @-webkit-keyframes #{$animation_name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation_name} {
+    @content;
+  }
+  @-o-keyframes #{$animation_name} {
+    @content;
+  }
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+
+/*
+
+  @-webkit-keyframes fade {
+  }
+
+*/

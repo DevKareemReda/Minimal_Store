@@ -1,0 +1,21 @@
+.btn {
+  padding: 13px;
+  width: calc(50% - 6px);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: $primary_color;
+  color: #fff;
+  @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+  &:hover {
+    background-color: $primary_hover;
+  }
+}
+
+.btn-light {
+  padding: 11px;
+  margin-left: 8px;
+  color: #242424;
+  border: 2px solid #242424;
+}

@@ -1,6 +1,8 @@
 /* _____ style header-nav _____ */
 .header-nav {
   padding: 39px 0;
+  position: relative;
+  z-index: 999;
   .row {
     position: relative;
   }
@@ -19,9 +21,9 @@
         opacity: 1;
         visibility: visible;
       }
-    }
-    &.active .menu {
-      padding-top: 54px;
+      &.active .menu {
+        padding-top: 54px;
+      }
     }
     .menu {
       @media screen and (max-width: 991px) {

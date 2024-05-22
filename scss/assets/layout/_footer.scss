@@ -1,0 +1,59 @@
+/* _____ style footer _____ */
+.fa-angle-up {
+  cursor: pointer;
+  color: #bababa;
+  padding: 22px 40px;
+  @include vendor(webkit moz o, transition, 0.2s ease-out color);
+
+  &:hover {
+    color: #000;
+  }
+}
+
+
+footer {
+  .form-footer {
+    position: relative;
+    input {
+      padding-right: 100px;
+    }
+    button {
+      background-color: transparent;
+      color: #000;
+      border: none;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 12px;
+      position: absolute;
+      right: 0;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+  }
+  ul.social {
+    margin-top: 20px;
+    li {
+      margin-right: 5px;
+      a {
+        padding: 10px;
+        color: #bcbcbc;
+      }
+    }
+  }
+  p {
+    a {
+      color: #000;
+      &:hover {
+        color: $primary_hover;
+      }
+    }
+  }
+}
+
+.bg-dark {
+  background-color: #000;
+}
+
+.bg-warning {
+  background-color: rgb(91, 39, 39);
+}

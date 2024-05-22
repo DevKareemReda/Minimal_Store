@@ -5,14 +5,12 @@ const store = [
     price: 69.99,
     description:
       "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
-    category: "men's clothing",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product01-1.jpg",
-      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product01b-1-768x768.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product01b-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product01c-1.jpg",
     ],
     rating: {
-      rate: 5,
       count: 943467,
     },
     quantity: 1,
@@ -23,7 +21,6 @@ const store = [
     price: 148.99,
     description:
       "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
-    category: "men's clothing",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product08-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product08b-1-768x768.jpg",
@@ -39,7 +36,6 @@ const store = [
     price: 128.99,
     description:
       "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
-    category: "men's clothing",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product09-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product09b-1-768x768.jpg",
@@ -55,7 +51,6 @@ const store = [
     price: 49.99,
     description:
       "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
-    category: "men's clothing",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product07-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product07b-1-768x768.jpg",
@@ -67,17 +62,16 @@ const store = [
   },
   {
     id: 5,
-    title: "Leather Wallet",
-    price: 49.99,
+    title: "Grey Beanie",
+    price: 29.99,
     description:
       "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
-    category: "men's clothing",
     images: [
-      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product06b-1.jpg",
-      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product06c-1-768x768.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg",
     ],
     rating: {
-      count: 943447,
+      count: "943468-1",
     },
     quantity: 1,
   },
@@ -87,7 +81,6 @@ const store = [
     price: 39.99,
     description:
       "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
-    category: "men's clothing",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product05-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product05c-1-768x768.jpg",
@@ -98,30 +91,78 @@ const store = [
     },
     quantity: 1,
   },
+  {
+    id: 7,
+    title: "Leather Wallet",
+    price: 49.99,
+    description:
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+    images: [
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product06b-1.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product06c-1-768x768.jpg",
+    ],
+    rating: {
+      count: 943447,
+    },
+    quantity: 1,
+  },
+  {
+    id: 8,
+    title: "Odell Messenger",
+    price: 129.99,
+    description:
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+    images: [
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product03-1.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product03b-1-768x768.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product03c-1-768x768.jpg",
+    ],
+    rating: {
+      count: 943468,
+    },
+    quantity: 1,
+  },
+  {
+    id: 9,
+    title: "Woven Backpack",
+    price: 119.99,
+    description:
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+    images: [
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product02-1.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product02b-1-768x768.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product02c-1-768x768.jpg",
+    ],
+    rating: {
+      count: 943465,
+    },
+    quantity: 1,
+  },
 ];
 
 let products = document.querySelector(".responsive");
-store.map((el) => {
+for (let i = 0; i < store.length - 3; i++) {
+  const {id, images, title, price} = store[i];
   let html = "";
   html = `
     <div class="col-lg-3">
       <div class="latest-items">
         <img
-          src="${el.images[0]}"
+          src="${images[0]}"
           alt="latest"
         />
         <img
-          src="${el.images[1]}"
+          src="${images[1]}"
           alt="latest"
           class="img-hover"
         />
         <div class="d-flex flex-column latest-details text-center py-3">
-          <h3 class="mb-2">${el.title}</h3>
+          <h3 class="mb-2">${title}</h3>
           <span class="woocommerce-price-amount">
-            <span class="woocommerce-currencySymbol">£</span>${el.price}
+            <span class="woocommerce-currencySymbol">£</span>${price}
           </span>
           <div class="kw-actions">
-            <button class="btn btn-primary link-actions" onclick=savedProduct(${el.id},this)><span class="loader"></span> add to cart</button>
+            <button class="btn btn-primary link-actions" onclick=savedProduct(${id},this)><span class="loader"></span> add to cart</button>
             <a href="#" class="link-actions style-1">more info</a>
           </div>
         </div>
@@ -129,7 +170,8 @@ store.map((el) => {
     </div>
   `;
   products.innerHTML += html;
-});
+}
+
 
 let price = document.querySelector(".woocommerce-price-amount");
 let topDrop = document.querySelector(".topnav-drop");

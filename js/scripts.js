@@ -110,3 +110,11 @@ function movingFade() {
 function removeToggleClass() {
   allSlider.forEach((el) => el.classList.remove("fade"));
 }
+
+let goUp = document.querySelector(".fa-angle-up");
+goUp.onclick = function () {
+  scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}

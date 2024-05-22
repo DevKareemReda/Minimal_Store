@@ -36,6 +36,11 @@
         right: -55%;
         @include vendor(webkit moz o, transition, 0.3s ease-in-out);
         opacity: 0;
+        @media screen and (max-width: 768px) {
+          bottom: 75%;
+          right: 0;
+          opacity: 1;
+        }
         .link-actions {
           text-transform: uppercase;
           background-color: $primary_color;

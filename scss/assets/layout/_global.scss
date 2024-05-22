@@ -14,6 +14,7 @@ body {
   font-family: "Karla", Helvetica, Arial, sans-serif;
   color: $body__color;
   font-size: 13px;
+  overflow-x: hidden;
 }
 
 ul {
@@ -21,29 +22,29 @@ ul {
 }
 
 a {
-  display: inline-block;
   text-decoration: none;
+}
+
+span,
+a {
+  display: inline-block;
 }
 
 img {
   vertical-align: middle;
 }
 
-@media screen and (min-width: 992px) {
-  .text-lg-left {
-    text-align: left !important;
-  }
-}
-
-.text-center {
-  text-align: center;
-}
-
-span {
-  display: inline-block;
-}
-.f-end {
-  float: right;
+input {
+  padding-left: 10px;
+  padding-right: 50px;
+  color: #555;
+  height: 38px;
+  width: 100%;
+  outline: none;
+  font-size: 12px;
+  font-family: inherit;
+  border: none;
+  border-bottom: 1px solid #ddd;
 }
 
 h1,
@@ -58,4 +59,20 @@ h4 {
   font-size: 14px;
   line-height: 28px;
   font-weight: 400;
+}
+
+.section {
+  padding: 70px 0;
+
+  @media screen and (max-width: 576px) {
+    padding: 50px 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.position-relative {
+  position: relative;
 }

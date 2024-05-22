@@ -9,6 +9,7 @@
       position: relative;
       display: none;
       visibility: hidden;
+      text-align: center;
       &.fade {
         display: block;
         visibility: visible;
@@ -23,7 +24,7 @@
           opacity: 1;
         }
       }
-
+      
       img {
         object-fit: cover;
         max-width: 100%;

@@ -3,9 +3,6 @@
   padding: 39px 0;
   position: relative;
   z-index: 999;
-  .row {
-    position: relative;
-  }
   main {
     @media screen and (max-width: 991px) {
       position: fixed;
@@ -31,7 +28,6 @@
         align-items: center;
         justify-content: center;
         padding-top: 100px;
-        // @include vendor(webkit moz o, transition, 0.4s all);
         transition: 0.4s padding-top;
       }
       li {
@@ -185,16 +181,8 @@
     }
 
     input {
-      outline: none;
-      font-size: 12px;
-      font-family: inherit;
-      height: 38px;
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid #ddd;
       padding-left: 34px;
       padding-right: 50px;
-      color: #141414;
       @media screen and (max-width: 991px) {
         background-color: transparent;
         border-bottom: 1px solid #ccc;

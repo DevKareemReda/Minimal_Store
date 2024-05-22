@@ -1,0 +1,147 @@
+.latest {
+  h3 {
+    font-size: 18px;
+    color: #141414;
+    font-weight: 600;
+  }
+  a.link-details {
+    color: #141414;
+  }
+  .latest-items {
+    margin-top: 35px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    img {
+      max-width: 100%;
+    }
+    .img-hover {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      @include vendor(webkit moz o, transition, 0.4s opacity);
+    }
+    &:hover .img-hover {
+      opacity: 1;
+    }
+    .latest-details {
+      position: relative;
+      h3 {
+        @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+        font-size: 14px;
+      }
+      .kw-actions {
+        position: absolute;
+        bottom: 55%;
+        right: -55%;
+        @include vendor(webkit moz o, transition, 0.3s ease-in-out);
+        opacity: 0;
+        .link-actions {
+          text-transform: uppercase;
+          background-color: $primary_color;
+          font-weight: 600;
+          font-size: 10px;
+          display: block;
+          margin-bottom: 3px;
+          padding: 6px 10px;
+          @include vendor(
+            webkit moz,
+            box-shadow,
+            0 4px 15px rgba(0, 0, 0, 0.2)
+          );
+          @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+          &.style-1 {
+            padding: 6px;
+            width: 72px;
+            float: right;
+          }
+          color: #fff;
+          &:hover {
+            background-color: #333;
+          }
+        }
+      }
+    }
+    &:hover .kw-actions {
+      right: 0;
+      opacity: 1;
+    }
+    &:hover .latest-details h3 {
+      color: $primary_hover;
+    }
+    .reviews {
+      .fa-star {
+        color: #d3ced2;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.latest-inner:hover a {
+  color: $primary_color;
+}
+
+.slick-initialized .slick-slide {
+  margin: 0 28px;
+}
+
+.slick-arrow {
+  width: 50px;
+  cursor: pointer;
+  polyline {
+    @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+  }
+  &:hover polyline {
+    stroke-width: 40px;
+  }
+}
+.slick__prev,
+.slick__next {
+  position: absolute;
+  top: 50%;
+  color: #787878;
+  transform: translateY(-50%);
+}
+
+.slick__prev {
+  left: -40px;
+}
+
+.slick__next {
+  right: -40px;
+}
+
+.loader {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  position: relative;
+  display: none;
+}
+.loader::after, .loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  left: 20px;
+  top: -10px;
+  animation: animloader 2s linear infinite both;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

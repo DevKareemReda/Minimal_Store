@@ -9,6 +9,8 @@
     />
     <title>Minimal Store</title>
     <link rel="stylesheet" href="css/libs/all.min.css" />
+    <link rel="stylesheet" href="css/libs/slick.css" />
+    <link rel="stylesheet" href="css/libs/slick-theme.css" />
     <link rel="stylesheet" href="css/libs/linearicon.min.css" />
     <link rel="stylesheet" href="css/libs/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -78,41 +80,19 @@
             </div>
             <div class="shopping">
               <div class="topnav-drop">
-                <ul class="woocommerce">
-                  <li class="d-flex">
-                    <a href="#">
-                      <img
-                        src="https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product09-1-420x420.jpg"
-                        alt="not found"
-                      />
-                    </a>
-                    <div class="d-flex flex-column">
-                      <a href="#">coast bag</a>
-                      <span class="woocommerce-quantity">
-                        1 x
-                        <span class="woocommerce-price-amount">
-                          <span class="woocommerce-currencySymbol">£</span
-                          >128.99
-                        </span>
-                      </span>
-                    </div>
-                    <span class="close">&times;</span>
-                  </li>
-                </ul>
+                <ul class="woocommerce"></ul>
                 <p
-                  class="woocommerce-total d-flex align-items-center justify-content-between mb-3"
+                  class="woocommerce-total main-style d-flex align-items-center justify-content-between mb-3"
                 >
                   <strong>Subtotal:</strong>
-                  <span class="woocommerce-price-amount amount">
-                    <span class="woocommerce-currencySymbol">£</span>128.99
-                  </span>
+                  <span class="woocommerce-price-amount amount"> £0 </span>
                 </p>
-                <p class="woocommerce-buttons">
+                <div class="woocommerce-buttons main-style">
                   <a href="#" class="btn btn-primary">View cart</a>
                   <a href="#" class="btn btn-light">Checkout</a>
-                </p>
+                </div>
               </div>
-              <span data-count="1">
+              <span data-count="0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -159,8 +139,9 @@
               stroke-linejoin="round"
               stroke-linecap="round"
               points="184,16 72,128 184,240"
-            ></polyline></svg
-        ></span>
+            ></polyline>
+          </svg>
+        </span>
         <span class="slider-next slider-arrow"
           ><svg viewBox="0 0 256 256">
             <polyline
@@ -170,8 +151,9 @@
               stroke-linejoin="round"
               stroke-linecap="round"
               points="72,16 184,128 72,240"
-            ></polyline></svg
-        ></span>
+            ></polyline>
+          </svg>
+        </span>
       </div>
     </div>
     <!-- ./slider -->
@@ -182,7 +164,7 @@
         <div class="row">
           <div class="col-md-7 col mx-auto text-center">
             <img src="images/badge.png" alt="badge" class="mb-5" />
-            <p>
+            <p class="main-style">
               Rapidiously procrastinate proactive supply chains via multimedia
               based niches. Objectively utilize scalable methods of empowerment
               rather than cross-platform mindshare. Seamlessly deliver
@@ -193,8 +175,24 @@
       </div>
     </section>
     <!-- ./badge -->
-    <!-- _____  _____ -->
-    <!-- ./ -->
+
+    <!-- _____ latest _____ -->
+    <section class="latest">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 text-center mx-auto">
+            <h3>Latest Products</h3>
+          </div>
+        </div>
+        <div class="row responsive"></div>
+        <div class="row">
+          <div class="col-lg-4 mx-auto text-center mt-2">
+            <a href="#" class="btn btn-primary">Shop all products</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ./latest -->
     <!-- _____  _____ -->
     <!-- ./ -->
     <!-- _____  _____ -->
@@ -203,6 +201,8 @@
     <!-- ./ -->
     <!-- ___ all files js ___ -->
     <script src="js/libs/jquery-3.7.1.min.js"></script>
+    <script src="js/libs/slick.min.js"></script>
+    <script src="js/shoppingCart.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>

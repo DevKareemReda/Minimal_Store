@@ -1,3 +1,47 @@
+$('.responsive').slick({
+  dots: false,
+  arrows: true,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  prevArrow: `<span class="slick-arrow slick__prev" style=""><svg viewBox="0 0 256 256"><polyline fill="none" stroke="#717171" stroke-width="16" stroke-linejoin="round" stroke-linecap="round" points="184,16 72,128 184,240"></polyline></svg></span>`,
+  nextArrow: `<span class="slick-arrow slick__next" style=""><svg viewBox="0 0 256 256"><polyline fill="none" stroke="#717171" stroke-width="16" stroke-linejoin="round" stroke-linecap="round" points="72,16 184,128 72,240"></polyline></svg></span>`,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 775,
+      settings: {
+        slidesToShow: 2,
+        arrows: false,
+      }
+    },
+    {
+      breakpoint: 650,
+      settings: {
+        slidesToShow: 2,
+        arrows: false,
+      }
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1,
+        arrows: false,
+      }
+    },
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
 let triggerBar = document.querySelector(".trigger-bar");
 let mobileSite = document.querySelector(".mobile-site");
 triggerBar.onclick = function () {
@@ -19,7 +63,6 @@ window.onkeydown = function (e) {
 };
 
 let searchParent = document.querySelector(".search-parent > i");
-
 searchParent.onclick = function () {
   this.classList.toggle("active");
   if (this.classList.contains("active")) {
@@ -33,7 +76,12 @@ searchParent.onclick = function () {
 
 let shopping = document.querySelector(".shopping > span");
 shopping.onclick = function () {
-  this.previousElementSibling.classList.toggle("active");
+  console.log();
+  if (this.getAttribute("data-count") == 0) {
+    alert("No file Choosen")  
+  } else {
+    this.previousElementSibling.classList.toggle("active");
+  }
 };
 
 let allSlider = document.querySelectorAll(".slider-items");

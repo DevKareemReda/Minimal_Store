@@ -1,4 +1,7 @@
 /* _____ style badge _____ */
 .badge {
-  padding: 120px 0;
+  padding: 100px 0;
+  @media screen and (max-width: 576px) {
+    padding: 50px 0;
+  }
 }

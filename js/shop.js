@@ -68,7 +68,7 @@ const store = [
       "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg",
-      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg"
     ],
     rating: {
       count: "943468-1",
@@ -141,11 +141,12 @@ const store = [
 ];
 
 let products = document.querySelector(".responsive");
-for (let i = 0; i < store.length - 3; i++) {
-  const {id, images, title, price} = store[i];
+
+store.map(el => {
+  const {id, images, title, price} = el;
   let html = "";
   html = `
-    <div class="col-lg-3">
+    <div class="col-lg-4 col-md-6">
       <div class="shop-items">
         <img
           src="${images[0]}"
@@ -170,7 +171,39 @@ for (let i = 0; i < store.length - 3; i++) {
     </div>
   `;
   products.innerHTML += html;
-}
+})
+
+
+// for (let i = 0; i < store.length; i++) {
+//   const {id, images, title, price} = store;
+//   let html = "";
+//   html = `
+//     <div class="col-lg-3">
+//       <div class="shop-items">
+//         <img
+//           src="${images[0]}"
+//           alt="shop"
+//         />
+//         <img
+//           src="${images[1]}"
+//           alt="shop"
+//           class="img-hover"
+//         />
+//         <div class="d-flex flex-column shop-details text-center py-3">
+//           <h3 class="mb-2">${title}</h3>
+//           <span class="woocommerce-price-amount">
+//             <span class="woocommerce-currencySymbol">£</span>${price}
+//           </span>
+//           <div class="kw-actions">
+//             <button class="btn btn-primary link-actions" onclick=savedProduct(${id},this)><span class="loader"></span> add to cart</button>
+//             <a href="#" class="link-actions style-1">more info</a>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   `;
+//   products.innerHTML += html;
+// }
 
 let price = document.querySelector(".woocommerce-price-amount");
 let topDrop = document.querySelector(".topnav-drop");

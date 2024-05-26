@@ -1,6 +1,5 @@
 $(function () {
   $(".responsive").slick({
-    dots: false,
     arrows: true,
     infinite: true,
     speed: 600,
@@ -35,40 +34,12 @@ $(function () {
         settings: {
           slidesToShow: 1,
           arrows: false,
+          dots: true
         },
       },
     ],
   });
 });
-
-let allSlider = document.querySelectorAll(".slider-items");
-let sliderNext = document.querySelector(".slider-next");
-let sliderPrev = document.querySelector(".slider-prev");
-let counterImage = 0;
-// next images
-function nextSlider() {
-  counterImage === allSlider.length - 1 ? (counterImage = 0) : counterImage++;
-  removeToggleClass();
-  movingFade();
-}
-sliderNext.onclick = nextSlider;
-
-// prev images
-function prevSlider() {
-  counterImage === 0 ? (counterImage = allSlider.length - 1) : counterImage--;
-  removeToggleClass();
-  movingFade();
-}
-sliderPrev.onclick = prevSlider;
-
-function movingFade() {
-  allSlider[counterImage].classList.add("fade");
-}
-
-function removeToggleClass() {
-  allSlider.forEach((el) => el.classList.remove("fade"));
-}
-
 
 // all products
 const store = [
@@ -212,36 +183,57 @@ const store = [
     quantity: 1,
   },
 ];
+
+let allSlider = document.querySelectorAll(".slider-items");
+let sliderNext = document.querySelector(".slider-next");
+let sliderPrev = document.querySelector(".slider-prev");
+let counterImage = 0;
+// next images
+function nextSlider() {
+  counterImage === allSlider.length - 1 ? (counterImage = 0) : counterImage++;
+  removeToggleClass();
+  movingFade();
+}
+sliderNext.onclick = nextSlider;
+
+// prev images
+function prevSlider() {
+  counterImage === 0 ? (counterImage = allSlider.length - 1) : counterImage--;
+  removeToggleClass();
+  movingFade();
+}
+sliderPrev.onclick = prevSlider;
+
+function movingFade() {
+  allSlider[counterImage].classList.add("fade");
+}
+
+function removeToggleClass() {
+  allSlider.forEach((el) => el.classList.remove("fade"));
+}
+
 // show 6 only products
 let products = document.querySelector(".responsive");
 for (let i = 0; i < store.length - 3; i++) {
   const { id, images, title, price } = store[i];
   let html = "";
   html = `
-    <div class="col-lg-3">
-      <div class="shop-items">
-        <img
-          src="${images[0]}"
-          alt="shop"
-        />
-        <img
-          src="${images[1]}"
-          alt="shop"
-          class="img-hover"
-        />
-        <div class="d-flex flex-column shop-details text-center py-3">
-          <h3 class="mb-2">${title}</h3>
-          <span class="woocommerce-price-amount">
-            <span class="woocommerce-currencySymbol">£</span>${price}
-          </span>
-          <div class="kw-actions">
-            <button class="btn btn-primary link-actions" onclick=savedProduct(${id},this)><span class="loader"></span> add to cart</button>
-            <a href="details.html" class="link-actions style-1">more info</a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="col-lg-3">
+  <div class="shop-items">
+  <img src="${images[0]}"alt="shop" />
+  <img src="${images[1]}" alt="shop" class="img-hover" />
+  <div class="d-flex flex-column shop-details text-center py-3">
+  <h3 class="mb-2">${title}</h3>
+  <span class="woocommerce-price-amount">
+  <span class="woocommerce-currencySymbol">£</span>${price}</span>
+  <div class="kw-actions">
+  <button class="btn btn-primary link-actions" onclick=savedProduct(${id},this)>
+  <span class="loader"></span> add to cart</button>
+  <a href="details.html?id=${id}" class="link-actions style-1">more info</a>
+  </div>
+  </div>
+  </div>
+  </div>
   `;
   products.innerHTML += html;
 }
-

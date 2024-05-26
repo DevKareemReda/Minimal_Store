@@ -971,9 +971,9 @@ footer p a:hover {
 .details ul.list-images li:last-child {
   margin-bottom: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .details img {
-    width: 100%;
+    vertical-align: middle;
   }
 }
 .details .details-items h2 {
@@ -1037,6 +1037,112 @@ footer p a:hover {
 .details .fa-magnifying-glass:hover {
   color: #000;
 }
+.details .overlay-slider {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  z-index: 6666;
+  display: none;
+}
+.details .overlay-slider.active {
+  display: block;
+}
+.details .overlay-slider .top-bar {
+  height: 44px;
+  font-size: 13px;
+  padding: 0 10px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  opacity: 0.75;
+  width: 100%;
+  z-index: 9999;
+  position: relative;
+}
+.details .overlay-slider span {
+  line-height: 44px;
+}
+.details .overlay-slider ul li {
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.75;
+}
+.details .overlay-slider ul li:hover {
+  opacity: 1;
+}
+.details .overlay-slider ul .zoom {
+  background: url("../images/default-skin.png") -89px 0;
+}
+.details .overlay-slider ul .full-screen {
+  background: url("../images/default-skin.png");
+}
+.details .overlay-slider ul .close {
+  background: url("../images/default-skin.png") 0 -43px;
+}
+.details .overlay-slider .image-center {
+  max-width: 545px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  cursor: zoom-in;
+}
+.details .overlay-slider .image-center img {
+  display: none;
+  -webkit-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+.details .overlay-slider .image-center img.zoom {
+  transform: scale(1.8);
+  cursor: zoom-out;
+}
+.details .overlay-slider .image-center img.active {
+  display: block;
+}
+.details .overlay-slider .bottom {
+  position: absolute;
+  bottom: 0;
+  background: #111;
+  width: 100%;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.details .overlay-slider .bottom p {
+  line-height: 44px;
+}
+.details .overlay-slider .prev,
+.details .overlay-slider .next {
+  width: 32px;
+  height: 32px;
+  opacity: 0.75;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.details .overlay-slider .prev:hover,
+.details .overlay-slider .next:hover {
+  opacity: 1;
+}
+.details .overlay-slider .prev {
+  background: url(../images/default-skin.png) 124px -43px;
+  left: 10px;
+}
+.details .overlay-slider .next {
+  background: url(../images/default-skin.png) -96px 46px;
+  right: 10px;
+}
 .details .list-footer {
   margin-top: 80px;
 }
@@ -1073,63 +1179,23 @@ footer p a:hover {
 .details table td {
   font-style: italic;
   border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
-}
-
-.overlay-slider {
-  position: fixed;
-  inset: 0;
+  padding-left: 60px;
   width: 100%;
-  height: 100%;
-  background: #242424;
-  z-index: 6666;
+}
+.details .tab {
   display: none;
+  animation: fadeIn 0.1s ease-in-out;
 }
-.overlay-slider .top-bar {
-  height: 44px;
-  font-size: 13px;
-  padding: 0 10px;
-  background: #111;
-  color: #fff;
-  opacity: 0.75;
-  width: 100%;
+.details .tab.active {
+  display: block;
 }
-.overlay-slider span {
-  line-height: 44px;
-}
-.overlay-slider ul li {
-  width: 44px;
-  height: 44px;
-  text-align: center;
-  line-height: 44px;
-  font-size: 20px;
-  cursor: pointer;
-  opacity: 0.75;
-}
-.overlay-slider ul li:hover {
-  opacity: 1;
-}
-.overlay-slider ul .close {
-  background: url("../images/default-skin.png") -89px 0;
-}
-.overlay-slider ul .full-screen {
-  background: url("../images/default-skin.png");
-}
-.overlay-slider ul .zoom {
-  background: url("../images/default-skin.png") 0 -43px;
-}
-.overlay-slider .image-center {
-  width: 732px;
-  margin: auto;
-}
-.overlay-slider .bottom-bar {
-  position: absolute;
-  bottom: 0;
-  background: #111;
-  width: 100%;
-  height: 44px;
-}
-.overlay-slider .bottom-bar p {
-  line-height: 44px;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

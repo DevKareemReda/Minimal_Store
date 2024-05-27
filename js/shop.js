@@ -178,6 +178,6 @@ store.map((el) => {
   </div>
   </div>
   </div>
-    `;
+  `;
   products.innerHTML += html;
 });

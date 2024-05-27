@@ -1,0 +1,38 @@
+/* _____ style carts _____ */
+.cart {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+      text-transform: uppercase;
+      tr {
+        th {
+          color: #000;
+          font-weight: 700;
+          font-size: 14px;
+          background-color: #fafafa;
+          height: 90px;
+          padding-top: 30px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td.product-remove {
+          padding: 25px;
+          text-align: center;
+          span {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          color: #fff;
+          background-color: #f99;
+          line-height: 26px;
+          text-align: center;
+          font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}

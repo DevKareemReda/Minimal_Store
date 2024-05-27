@@ -213,7 +213,6 @@ function removeToggleClass() {
 }
 
 // show 6 only products
-let products = document.querySelector(".responsive");
 for (let i = 0; i < store.length - 3; i++) {
   const { id, images, title, price } = store[i];
   let html = "";
@@ -227,13 +226,60 @@ for (let i = 0; i < store.length - 3; i++) {
   <span class="woocommerce-price-amount">
   <span class="woocommerce-currencySymbol">£</span>${price}</span>
   <div class="kw-actions">
-  <button class="btn btn-primary link-actions" onclick=savedProduct(${id},this)>
-  <span class="loader"></span> add to cart</button>
+  <button class="btn btn-primary link-actions" onclick=savedProduct(${id},this)><span class="loader"></span> add to cart</button>
   <a href="details.html?id=${id}" class="link-actions style-1">more info</a>
   </div>
   </div>
   </div>
   </div>
   `;
-  products.innerHTML += html;
+  document.querySelector(".latest .responsive").innerHTML += html;
 }
+
+
+// show all products
+// let addPrice = document.querySelector(".woocommerce-price-amount");
+// let topDrop = document.querySelector(".topnav-drop");
+// let shoppingCommerce = document.querySelector(".shopping .woocommerce");
+// function savedProduct(id, same) {
+//   let productStorage = JSON.parse(localStorage.getItem("saved")) || [];
+//   let filterProducts = store.find((el) => el.id === id);
+//   let loopProducts = productStorage.find((el) => el.id === filterProducts.id);
+//   loopProducts
+//       ? (loopProducts.quantity += 1)
+//       : productStorage.push(filterProducts);
+//
+//   let html = "";
+//   productStorage.map((el) => {
+//     const { id, images, title, price, quantity } = el;
+//     html += `
+//       <li class="d-flex">
+//         <a href="#">
+//           <img src="${images[0]}" alt="not found">
+//         </a>
+//         <div class="d-flex flex-column">
+//           <a href="#">${title}</a>
+//           <span class="woocommerce-quantity">
+//             ${quantity} x
+//             <span class="woocommerce-price-amount">
+//               <span class="woocommerce-currencySymbol">£</span>${(
+//         price * quantity
+//     ).toFixed(2)}
+//             </span>
+//           </span>
+//         </div>
+//         <span class="close" onclick=closeProducts(${id},parentElement)>×</span>
+//       </li>
+//       `;
+//   });
+//   localStorage.setItem("saved", JSON.stringify(productStorage));
+//   same.style.opacity = ".5";
+//   same.childNodes[0].style.display = "block";
+//   setTimeout(() => {
+//     same.style.opacity = "1";
+//     same.childNodes[0].style.display = "none";
+//     shoppingCommerce.innerHTML = html;
+//     calcTotalPrice(productStorage);
+//     calcTotalQuantity(productStorage);
+//   }, 1500);
+// }

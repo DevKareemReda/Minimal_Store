@@ -93,6 +93,11 @@ h4 {
   font-weight: 400;
 }
 
+.main-head {
+  font-size: 22px;
+  color: #000;
+}
+
 p {
   line-height: 28px;
 }
@@ -592,11 +597,11 @@ p {
 }
 .shopping .woocommerce-buttons a {
   width: calc(50% - 6px);
-  padding: 7px;
+  padding: 13px;
   font-size: 13px;
 }
 .shopping .woocommerce-buttons a.btn-light {
-  padding: 5px;
+  padding: 11px;
 }
 
 @media screen and (max-width: 768px) {
@@ -754,6 +759,7 @@ p {
 }
 
 /* _____ style badge _____ */
+/* _____ style latest _____ */
 .latest h3 {
   font-size: 18px;
   color: #141414;
@@ -832,7 +838,7 @@ p {
     opacity: 1;
   }
   100% {
-    transform: scale(2);
+    transform: scale(4);
     opacity: 0;
   }
 }
@@ -893,10 +899,7 @@ footer p a:hover {
   background-color: rgb(91, 39, 39);
 }
 
-.shop h3 {
-  font-size: 22px;
-  color: #000;
-}
+/* _____ style shop _____ */
 .shop select.orderby {
   height: 34px;
   outline: none;
@@ -930,6 +933,37 @@ footer p a:hover {
   .shop .column:last-child {
     margin-bottom: 0;
   }
+}
+
+/* _____ style carts _____ */
+.cart table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cart table thead {
+  text-transform: uppercase;
+}
+.cart table thead tr th {
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: #fafafa;
+  height: 90px;
+  padding-top: 30px;
+}
+.cart table tbody tr td.product-remove {
+  padding: 25px;
+  text-align: center;
+}
+.cart table tbody tr td.product-remove span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #f99;
+  line-height: 26px;
+  text-align: center;
+  font-size: 24px;
 }
 
 /* _____ style details _____ */

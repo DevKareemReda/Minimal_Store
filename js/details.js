@@ -6,7 +6,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 69.99,
     description:
-      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product01-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product01b-1.jpg",
@@ -23,7 +23,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 148.99,
     description:
-      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product08-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product08b-1-768x768.jpg",
@@ -39,7 +39,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 128.99,
     description:
-      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product09-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product09b-1-768x768.jpg",
@@ -55,7 +55,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 49.99,
     description:
-      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product07-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product07b-1-768x768.jpg",
@@ -71,10 +71,9 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 29.99,
     description:
-      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
-      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg",
-      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg",
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg"
     ],
     rating: {
       count: "943468-1",
@@ -87,7 +86,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 39.99,
     description:
-      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product05-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product05c-1-768x768.jpg",
@@ -104,7 +103,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 49.99,
     description:
-      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product06b-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product06c-1-768x768.jpg",
@@ -120,7 +119,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 129.99,
     description:
-      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product03-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product03b-1-768x768.jpg",
@@ -137,7 +136,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 119.99,
     description:
-      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product02-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product02b-1-768x768.jpg",
@@ -150,21 +149,25 @@ const store = [
   },
 ];
 
-let openDetails = new URLSearchParams(location.search).get("id");
-let getId = store.find((el) => el.id == openDetails);
-const {images, title, pricep, description, rating,categories} = getId;
-let html = "";
-html = `
+function showDetailsProducts() {
+  let openDetails = new URLSearchParams(location.search).get("id");
+  let getId = store.find((el) => el.id === +openDetails);
+  const {images, title, price, description, rating, categories} = getId;
+  let html = "";
+  html = `
   <div class="col-md-8 d-flex flex-md-row flex-column-reverse">
   <ul class="d-md-block d-flex list-images">
   <li><img src="${images[0]}"
   class="active" alt="Not found"></li>
   <li><img src="${images[1]}"
-  alt="Not found"></li>
+  alt="Not found" onerror="this.remove()"></li>
+  <li><img src="${images[2]}"
+  alt="Not found" onerror="this.remove()"></li>
+
   </ul>
   <div class="position-relative">
   <img src="${images[0]}"
-  class="img-fluid" style="height: 100%" alt="Not found">
+  class="img-fluid" style="height: 100%; object-fit: cover" alt="Not found">
   <i class="fa-solid fa-magnifying-glass"></i>
   </div>
   <div class="overlay-slider">
@@ -178,9 +181,9 @@ html = `
   </div>
   <div class="image-center">
   <img src="${images[0]}"
-  class="img-fluid active" name="1 / 2" alt="${title} 01">
+  class="img-fluid active" id="1 / 2" alt="${title} 01">
   <img src="${images[1]}"
-  class="img-fluid" name="2 / 2" alt="${title} 02">
+  class="img-fluid" id="2 / 2" alt="${title} 02">
   </div>
   <div class="top-bar bottom text-center">
   <p>${title} 01</p>
@@ -193,7 +196,7 @@ html = `
   <div class="col-md-4 ps-3">
   <div class="details-items">
   <h2>${title}</h2>
-  <h3>£${pricep}</h3>
+  <h3>£${price}</h3>
   <p class="main-style">${description}</p>
   </div>
   <form action="#">
@@ -212,8 +215,10 @@ html = `
   </div>
   </div>
 `;
+  document.querySelector(".details .responsive").innerHTML = html;
+}
 
-document.querySelector(".responsive").innerHTML = html;
+showDetailsProducts();
 
 let openSlider = document.querySelector(".details .fa-magnifying-glass");
 let closeSlider = document.querySelector(".details .close");
@@ -237,28 +242,30 @@ listImages.forEach((el) => {
     listImages.forEach((el) => el.classList.remove("active"));
     this.classList.add("active");
     this.parentElement.parentElement.nextElementSibling.children[0].src =
-      this.src;
+        this.src;
   };
 });
 
 function nextImages() {
   counterImage === allImageCenter.length - 1
-    ? (counterImage = 0)
-    : counterImage++;
+      ? (counterImage = 0)
+      : counterImage++;
   allImageCenter.forEach((el) => el.classList.remove("active"));
   toggleSlider();
   bottomCaption.textContent = allImageCenter[counterImage].alt;
 }
+
 next.onclick = nextImages;
 
 function prevImages() {
   counterImage === 0
-    ? (counterImage = allImageCenter.length - 1)
-    : counterImage--;
+      ? (counterImage = allImageCenter.length - 1)
+      : counterImage--;
   allImageCenter.forEach((el) => el.classList.remove("active"));
   toggleSlider();
   bottomCaption.textContent = allImageCenter[counterImage].alt;
 }
+
 prev.onclick = prevImages;
 
 function toggleSlider() {
@@ -277,6 +284,7 @@ window.onkeydown = function (e) {
 zoom.onclick = function () {
   allImageCenter.forEach((el) => el.classList.toggle("zoom"));
 };
+
 allImageCenter.forEach((el) => {
   el.onclick = function () {
     this.classList.toggle("zoom");
@@ -319,3 +327,29 @@ listFooter.forEach((el) => {
     document.querySelector("#" + e.target.dataset.tab).classList.add("active");
   };
 });
+
+
+let openDetails = new URLSearchParams(location.search).get("id");
+let filterId = store.filter(el => el.id !== +openDetails);
+for (let i = 0; i < filterId.length - 4; i++) {
+  const {id, images, title, price} = filterId[i];
+  let html = "";
+  html = `
+  <div class="col-md-3 col-sm-6 col-12">
+    <div class="shop-items">
+      <img src="${images[0]}"alt="shop" />
+      <img src="${images[1]}" alt="shop" class="img-hover" />
+      <div class="d-flex flex-column shop-details text-center py-3">
+        <h3 class="mb-2">${title}</h3>
+        <span class="woocommerce-price-amount">
+        <span class="woocommerce-currencySymbol">£</span>${price}</span>
+        <div class="kw-actions">
+          <button class="btn btn-primary link-actions" onclick=savedProduct(${id},this)><span class="loader"></span> add to cart</button>
+          <a href="details.html?id=${id}" class="link-actions style-1">more info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+  document.querySelector(".latest-products").innerHTML += html;
+}

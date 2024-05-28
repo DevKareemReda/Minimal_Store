@@ -215,6 +215,33 @@ p {
   font-size: 10px;
 }
 
+input[type=number] {
+  height: 52px;
+  font-size: 12px;
+  border: 1px solid #eaeaea;
+  outline: none;
+  padding: 2px;
+  width: 65px;
+  text-align: center;
+  color: inherit;
+  margin-right: 5px;
+}
+
+.amount {
+  font-weight: 700;
+  float: right;
+  font-size: 15px;
+}
+
+.float-end {
+  float: none;
+}
+@media screen and (max-width: 992px) {
+  .float-end {
+    float: right;
+  }
+}
+
 /* _____ style header-nav _____ */
 .header-nav {
   padding: 39px 0;
@@ -586,11 +613,6 @@ p {
   padding: 20px 0;
   font-size: 11px;
 }
-.shopping .topnav-drop .amount {
-  font-weight: 700;
-  float: right;
-  font-size: 15px;
-}
 .shopping .topnav-drop.active {
   opacity: 1;
   visibility: visible;
@@ -904,7 +926,6 @@ footer p a:hover {
   height: 34px;
   outline: none;
   font-size: 11px;
-  color: #838383;
   color: #909090;
   font-weight: 500;
   border-radius: 3px;
@@ -940,30 +961,125 @@ footer p a:hover {
   width: 100%;
   border-collapse: collapse;
 }
-.cart table thead {
-  text-transform: uppercase;
+.cart table tr {
+  position: relative;
 }
-.cart table thead tr th {
+.cart table tr::before, .cart table tr::after {
+  content: "";
+  display: table-cell;
+  width: 50px;
+}
+@media screen and (max-width: 992px) {
+  .cart table tr::before, .cart table tr::after {
+    width: 0;
+  }
+}
+.cart table thead {
+  background-color: #fafafa;
   color: #000;
   font-weight: 700;
   font-size: 14px;
-  background-color: #fafafa;
-  height: 90px;
   padding-top: 30px;
+  height: 90px;
+  text-transform: uppercase;
 }
-.cart table tbody tr td.product-remove {
-  padding: 25px;
+@media screen and (max-width: 992px) {
+  .cart table thead {
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  .cart table tbody {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+.cart table tbody td {
+  padding: 29px;
   text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-.cart table tbody tr td.product-remove span {
+@media screen and (max-width: 992px) {
+  .cart table tbody td {
+    display: block !important;
+    width: 100%;
+    text-align: left;
+  }
+  .cart table tbody td::before {
+    content: attr(data-title) ": ";
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  .cart table tbody td:last-of-type {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .cart table tbody td.table-products {
+    margin-top: 60px;
+  }
+}
+.cart table tbody td.table-products span {
   width: 28px;
   height: 28px;
+  background: #f99;
   border-radius: 50%;
-  color: #fff;
-  background-color: #f99;
-  line-height: 26px;
   text-align: center;
-  font-size: 24px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 25px;
+  cursor: pointer;
+}
+.cart table tbody td.table-products span:hover {
+  background-color: #000;
+  color: #fff;
+}
+@media screen and (max-width: 992px) {
+  .cart table tbody td.table-products span {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+}
+.cart table tbody td.table-products .product-thumbnails {
+  width: 72px;
+}
+.cart table tbody td.table-products .product-thumbnails img {
+  width: 100%;
+  border: 3px solid #edefed;
+}
+@media screen and (max-width: 992px) {
+  .cart table tbody td.table-products .product-thumbnails img {
+    display: none;
+  }
+}
+.cart table tbody td.table-products a {
+  color: #000;
+  font-weight: bold;
+}
+.cart table tbody td.table-products a:hover {
+  color: #9c825e;
+}
+@media screen and (max-width: 992px) {
+  .cart table tbody td.table-products a {
+    margin-top: -15px;
+  }
+}
+.cart table tbody input[type=number] {
+  width: 100px;
+}
+@media screen and (max-width: 992px) {
+  .cart table tbody input[type=number] {
+    margin-right: 0;
+    margin-top: -15px;
+  }
+}
+.cart table tbody .amount {
+  float: none;
+}
+@media screen and (max-width: 992px) {
+  .cart table tbody .amount {
+    float: right;
+  }
 }
 
 /* _____ style details _____ */
@@ -1022,17 +1138,6 @@ footer p a:hover {
 }
 .details form {
   margin-top: 20px;
-}
-.details form input {
-  height: 52px;
-  font-size: 12px;
-  border: 1px solid #eaeaea;
-  outline: none;
-  padding: 2px;
-  width: 65px;
-  text-align: center;
-  color: inherit;
-  margin-right: 5px;
 }
 .details form button {
   height: 51px;

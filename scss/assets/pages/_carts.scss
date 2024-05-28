@@ -3,34 +3,108 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    thead {
-      text-transform: uppercase;
-      tr {
-        th {
-          color: #000;
-          font-weight: 700;
-          font-size: 14px;
-          background-color: #fafafa;
-          height: 90px;
-          padding-top: 30px;
+    tr {
+      &::before,
+      &::after {
+        content: "";
+        display: table-cell;
+        width: 50px;
+        @media screen and (max-width: 992px) {
+          width: 0;
         }
+      }
+      position: relative;
+    }
+    thead {
+      background-color: #fafafa;
+      color: #000;
+      font-weight: 700;
+      font-size: 14px;
+      padding-top: 30px;
+      height: 90px;
+      text-transform: uppercase;
+      @media screen and (max-width: 992px) {
+        display: none;
       }
     }
     tbody {
-      tr {
-        td.product-remove {
-          padding: 25px;
-          text-align: center;
-          span {
+      @media screen and (max-width: 992px) {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      td {
+        padding: 29px;
+        text-align: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        @media screen and (max-width: 992px) {
+          &::before {
+            content: attr(data-title) ": ";
+            font-weight: 700;
+            text-transform: capitalize;
+          }
+          &:last-of-type {
+            font-size: 20px;
+          }
+          display: block !important;
+          width: 100%;
+          text-align: left;
+        }
+      }
+      td.table-products {
+        @media screen and (max-width: 992px) {
+          margin-top: 60px;
+        }
+        span {
           width: 28px;
           height: 28px;
+          background: #f99;
           border-radius: 50%;
-          color: #fff;
-          background-color: #f99;
-          line-height: 26px;
           text-align: center;
-          font-size: 24px;
+          color: #fff;
+          font-size: 20px;
+          line-height: 25px;
+          cursor: pointer;
+          &:hover {
+            background-color: #000;
+            color: #fff;
           }
+          @media screen and (max-width: 992px) {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+          }
+        }
+        .product-thumbnails {
+          width: 72px;
+          img {
+            width: 100%;
+            border: 3px solid #edefed;
+            @media screen and (max-width: 992px) {
+              display: none;
+            }
+          }
+        }
+        a {
+          color: #000;
+          font-weight: bold;
+          &:hover {
+            color: $primary_hover;
+          }
+          @media screen and (max-width: 992px) {
+            margin-top: -15px;
+          }
+        }
+      }
+      input[type="number"] {
+        width: 100px;
+        @media screen and (max-width: 992px) {
+          margin-right: 0;
+          margin-top: -15px;
+        }
+      }
+      .amount {
+        float: none;
+        @media screen and (max-width: 992px) {
+          float: right;
         }
       }
     }

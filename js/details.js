@@ -6,7 +6,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 69.99,
     description:
-        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product01-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product01b-1.jpg",
@@ -23,7 +23,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 148.99,
     description:
-        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product08-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product08b-1-768x768.jpg",
@@ -39,7 +39,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 128.99,
     description:
-        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product09-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product09b-1-768x768.jpg",
@@ -55,7 +55,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 49.99,
     description:
-        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product07-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product07b-1-768x768.jpg",
@@ -71,9 +71,9 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 29.99,
     description:
-        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
-      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg"
+      "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product04-1.jpg",
     ],
     rating: {
       count: "943468-1",
@@ -86,7 +86,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 39.99,
     description:
-        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product05-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product05c-1-768x768.jpg",
@@ -103,7 +103,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 49.99,
     description:
-        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product06b-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product06c-1-768x768.jpg",
@@ -119,7 +119,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 129.99,
     description:
-        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product03-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product03b-1-768x768.jpg",
@@ -136,7 +136,7 @@ const store = [
     categories: ["Backpacks", "Bags", "Messengers"],
     price: 119.99,
     description:
-        "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
+      "Dynamically enable functional sources through distributed services. Proactively restore cross-platform platforms after functionalized technologies",
     images: [
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product02-1.jpg",
       "https://demo.kallyas.net/minimal-store/wp-content/uploads/sites/91/2018/01/product02b-1-768x768.jpg",
@@ -152,7 +152,7 @@ const store = [
 function showDetailsProducts() {
   let openDetails = new URLSearchParams(location.search).get("id");
   let getId = store.find((el) => el.id === +openDetails);
-  const {images, title, price, description, rating, categories} = getId;
+  const { images, title, price, description, rating, categories } = getId;
   let html = "";
   html = `
   <div class="col-md-8 d-flex flex-md-row flex-column-reverse">
@@ -242,14 +242,14 @@ listImages.forEach((el) => {
     listImages.forEach((el) => el.classList.remove("active"));
     this.classList.add("active");
     this.parentElement.parentElement.nextElementSibling.children[0].src =
-        this.src;
+      this.src;
   };
 });
 
 function nextImages() {
   counterImage === allImageCenter.length - 1
-      ? (counterImage = 0)
-      : counterImage++;
+    ? (counterImage = 0)
+    : counterImage++;
   allImageCenter.forEach((el) => el.classList.remove("active"));
   toggleSlider();
   bottomCaption.textContent = allImageCenter[counterImage].alt;
@@ -259,8 +259,8 @@ next.onclick = nextImages;
 
 function prevImages() {
   counterImage === 0
-      ? (counterImage = allImageCenter.length - 1)
-      : counterImage--;
+    ? (counterImage = allImageCenter.length - 1)
+    : counterImage--;
   allImageCenter.forEach((el) => el.classList.remove("active"));
   toggleSlider();
   bottomCaption.textContent = allImageCenter[counterImage].alt;
@@ -328,11 +328,10 @@ listFooter.forEach((el) => {
   };
 });
 
-
 let openDetails = new URLSearchParams(location.search).get("id");
-let filterId = store.filter(el => el.id !== +openDetails);
+let filterId = store.filter((el) => el.id !== +openDetails);
 for (let i = 0; i < filterId.length - 4; i++) {
-  const {id, images, title, price} = filterId[i];
+  const { id, images, title, price } = filterId[i];
   let html = "";
   html = `
   <div class="col-md-3 col-sm-6 col-12">

@@ -170,3 +170,28 @@ p {
     }
   }
 }
+
+input[type="number"] {
+  height: 52px;
+  font-size: 12px;
+  border: 1px solid #eaeaea;
+  outline: none;
+  padding: 2px;
+  width: 65px;
+  text-align: center;
+  color: inherit;
+  margin-right: 5px;
+}
+
+.amount {
+  font-weight: 700;
+  float: right;
+  font-size: 15px;
+}
+
+.float-end {
+  float: none;
+  @media screen and (max-width: 992px) {
+    float: right;
+  }
+}

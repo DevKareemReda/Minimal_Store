@@ -4,6 +4,7 @@
     width: 100%;
     border-collapse: collapse;
     tr {
+      position: relative;
       &::before,
       &::after {
         content: "";
@@ -13,7 +14,6 @@
           width: 0;
         }
       }
-      position: relative;
     }
     thead {
       background-color: #fafafa;
@@ -28,8 +28,14 @@
       }
     }
     tbody {
+      &:first-of-type td {
+        border-top: 0;
+      }
       @media screen and (max-width: 992px) {
         border: 1px solid rgba(0, 0, 0, 0.1);
+        &:nth-child(odd) {
+          background-color: rgba(0,0,0,.025);
+        }
       }
       td {
         padding: 29px;
@@ -57,12 +63,13 @@
           width: 28px;
           height: 28px;
           background: #f99;
-          border-radius: 50%;
           text-align: center;
           color: #fff;
           font-size: 20px;
           line-height: 25px;
           cursor: pointer;
+          @include vendor(webkit moz o, border-radius, 50%);
+          @include vendor(webkit moz ms, user-select, none);
           &:hover {
             background-color: #000;
             color: #fff;
@@ -98,7 +105,7 @@
         width: 100px;
         @media screen and (max-width: 992px) {
           margin-right: 0;
-          margin-top: -15px;
+          margin-top: -18px;
         }
       }
       .amount {

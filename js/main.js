@@ -38,7 +38,7 @@ searchParent.onclick = function () {
 let shopping = document.querySelector(".shopping > span");
 shopping.onclick = function () {
   if (this.getAttribute("data-count") == 0) {
-    alert("No products Choosen")
+    alert("No products Choosen");
   } else {
     this.previousElementSibling.classList.toggle("active");
   }
@@ -49,9 +49,9 @@ let goUp = document.querySelector(".fa-angle-up");
 goUp.onclick = function () {
   scrollTo({
     top: 0,
-    behavior: 'smooth'
-  })
-}
+    behavior: "smooth",
+  });
+};
 
 // show all products
 // let addPrice = document.querySelector(".woocommerce-price-amount");

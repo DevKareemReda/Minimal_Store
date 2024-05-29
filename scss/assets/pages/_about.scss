@@ -1,0 +1,30 @@
+.about {
+  .about-image01 {
+    background: url("../images/post_01.jpg") center top / cover no-repeat;
+    min-height: 600px;
+    @media screen and (max-width: 768px) {
+      min-height: 420px;
+    }
+  }
+  .about-image02 {
+    background: url("../images/post_02.jpg") center center / cover no-repeat;
+    min-height: 500px;
+  }
+  .about-image03 {
+    background: url("../images/post_03.jpg") center center / cover no-repeat;
+    min-height: 360px;
+  }
+  .about-details {
+    padding: 0 50px;
+    @media screen and (max-width: 992px) {
+      padding: 0;
+      margin-top: 40px;
+    }
+  }
+  &.bg-gray {
+    background-color: #f4f4f4;
+    h3 {
+      font-size: 20px;
+    }
+  }
+}

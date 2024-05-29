@@ -56,17 +56,17 @@ h4 {
 }
 
 .main-style {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
 }
 
 .main-head {
-  font-size: 22px;
+  font-size: 26px;
   color: #000;
 }
 
 p {
-    line-height: 28px;
+  line-height: 26px;
 }
 
 .section {
@@ -92,6 +92,19 @@ p {
 .img-fluid {
   max-width: 100%;
   vertical-align: middle;
+}
+
+.amount {
+  font-weight: 700;
+  float: right;
+  font-size: 15px;
+}
+
+.float-end {
+  float: none;
+  @media screen and (max-width: 992px) {
+    float: right;
+  }
 }
 
 .shop-items {
@@ -138,11 +151,7 @@ p {
         display: block;
         margin-bottom: 3px;
         padding: 6px 10px;
-        @include vendor(
-          webkit moz,
-          box-shadow,
-          0 4px 15px rgba(0, 0, 0, 0.2)
-        );
+        @include vendor(webkit moz, box-shadow, 0 4px 15px rgba(0, 0, 0, 0.2));
         @include vendor(webkit moz o, transition, 0.2s ease-in-out);
         &.style-1 {
           padding: 6px;
@@ -181,17 +190,4 @@ input[type="number"] {
   text-align: center;
   color: inherit;
   margin-right: 5px;
-}
-
-.amount {
-  font-weight: 700;
-  float: right;
-  font-size: 15px;
-}
-
-.float-end {
-  float: none;
-  @media screen and (max-width: 992px) {
-    float: right;
-  }
 }

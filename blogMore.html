@@ -7,35 +7,33 @@
     <meta name="description" content="Chic Reusable Shopping Tote Bag - Sustainable Style for Everyday Errands" />
     <title>Minimal Store</title>
     <link rel="stylesheet" href="css/libs/all.min.css" />
-    <link rel="stylesheet" href="css/libs/slick.css" />
-    <link rel="stylesheet" href="css/libs/slick-theme.css" />
-    <link rel="stylesheet" href="css/libs/linearicon.min.css" />
+    <link rel="stylesheet" href="css/libs/linearicon.min.css">
     <link rel="stylesheet" href="css/libs/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <!--[if lte IE 8]>
-      <script type="text/javascript">
+    <script type="text/javascript">
         var $buoop = {
-          vs: { i: 10, f: 25, o: 12.1, s: 7, n: 9 },
+            vs: { i: 10, f: 25, o: 12.1, s: 7, n: 9 },
         };
 
         $buoop.ol = window.onload;
 
         window.onload = function () {
-          try {
-            if ($buoop.ol) {
-              $buoop.ol();
-            }
-          } catch (e) {}
+            try {
+                if ($buoop.ol) {
+                    $buoop.ol();
+                }
+            } catch (e) {}
 
-          var e = document.createElement("script");
-          e.setAttribute("type", "text/javascript");
-          e.setAttribute("src", "https://browser-update.org/update.js");
-          document.body.appendChild(e);
+            var e = document.createElement("script");
+            e.setAttribute("type", "text/javascript");
+            e.setAttribute("src", "https://browser-update.org/update.js");
+            document.body.appendChild(e);
         };
-      </script>
+    </script>
     <![endif]-->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
 
@@ -44,7 +42,7 @@
     <header class="header-nav">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col">
+                <div class="col-sm-5 col">
                     <main>
                         <ul class="menu d-flex align-content-center">
                             <li><a href="index.html">home</a></li>
@@ -63,10 +61,10 @@
                         <span></span>
                     </div>
                 </div>
-                <div class="col text-center">
+                <div class="col-sm-2 col text-center">
                     <a href="#"><img src="images/logo.png" alt="logo" /></a>
                 </div>
-                <div class="col d-flex align-items-center justify-content-end sm-column">
+                <div class="col-sm-5 col d-flex align-items-center justify-content-end sm-column">
                     <div class="search-parent">
                         <i class="fa-solid fa-magnifying-glass"></i>
 
@@ -102,58 +100,33 @@
     </header>
     <!-- ./header -->
 
-    <!-- _____ details _____ -->
-    <section class="details">
+    <!-- _____ More _____ -->
+    <section class="more">
         <div class="container">
-            <div class="row responsive"></div>
-
-            <div class="row section">
-                <div class="col-md-12 text-center">
-                    <ul class="d-flex list-footer justify-content-center mb-3">
-                        <li><a href="#" data-tab="one" class="active">Description</a></li>
-                        <li><a href="#" data-tab="two">Additional information</a></li>
-                    </ul>
-                    <div class="tab active" id="one">
-                        <p class="mb-4">Distinctively create client-centered networks whereas technically sound customer
-                            service. Holisticly synergize enabled supply chains through timely innovation. Seamlessly
-                            disseminate flexible vortals without high-payoff innovation.</p>
-
-                        <p>Continually harness reliable products after cross-platform scenarios. Authoritatively
-                            disintermediate economically sound e-business via granular e-commerce. Rapidiously embrace
-                            innovative results without process-centric interfaces. Globally architect economically sound
-                            bandwidth with installed base materials. Uniquely supply wireless niches through
-                            economically sound innovation.</p>
-                    </div>
-                    <table class="tab" id="two">
-                        <tr>
-                            <th>Color</th>
-                            <td>Black, Blue, Grey</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+            <div class="row blog-more"></div>
         </div>
     </section>
+    <!-- ./More -->
 
-
-    <!-- _____ latest _____ -->
-    <section class="latest section">
+    <!-- _____ related _____ -->
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 text-center mb-5 mx-auto">
-                    <h3 class="related">Related Products</h3>
+                    <h3 class="related">What you can read next</h3>
                 </div>
             </div>
-            <div class="row latest-products">
+            <div class="row related-parent">
             </div>
             <div class="row">
                 <div class="col-lg-4 mx-auto text-center mt-4">
-                    <a href="shop.html" class="btn btn-primary">Show other products</a>
+                    <a href="blog.html" class="btn btn-primary">Show More</a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ./latest -->
+    <!-- ./related -->
+
 
     <!-- _____ footer _____ -->
     <footer class="section">
@@ -205,8 +178,8 @@
 
     <!-- ___ all files js ___ -->
     <script src="js/libs/jquery-3.7.1.min.js"></script>
+    <script src="js/blogMore.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/details.js"></script>
 </body>
 
 </html>

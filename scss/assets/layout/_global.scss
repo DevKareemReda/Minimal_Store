@@ -23,6 +23,11 @@ ul {
 
 a {
   text-decoration: none;
+  @include vendor(webkit moz o, transition, all 0.2s ease-out);
+  color: #000;
+  &:hover:not(.btn) {
+    color: $primary_color;
+  }
 }
 
 span,
@@ -56,13 +61,19 @@ h4 {
 }
 
 .main-style {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
 }
 
 .main-head {
   font-size: 26px;
   color: #000;
+}
+
+.related {
+  font-size: 18px;
+  color: #141414;
+  font-weight: 600;
 }
 
 p {

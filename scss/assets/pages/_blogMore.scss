@@ -1,0 +1,118 @@
+.more {
+  .container {
+    @media screen and (max-width: 768px) {
+      padding: 0;
+    }
+  }
+  .blogMore-img {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#000, 0.4);
+      @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+    }
+    &:hover::before {
+      opacity: 0;
+    }
+  }
+
+  .blogMore-details {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    img {
+      border-radius: 50%;
+    }
+    ul {
+      li {
+        margin-bottom: 3px;
+        color: rgba(#fff, 0.7);
+        a {
+          color: #fff;
+          &:hover {
+            color: rgba(#fff, 0.7);
+          }
+        }
+      }
+      li:last-of-type {
+        font-size: 10px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .blogMore-caption {
+    padding: 40px;
+    .main-head {
+      margin-bottom: 30px;
+      font-size: 35px;
+    }
+  }
+  .social {
+    margin: 50px 0;
+    &::before {
+      content: "SHARE:";
+      display: block;
+      color: #8a8a8a;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    a {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      color: rgba(#000, 0.25);
+      @include vendor(webkit moz, border-radius, 3px);
+      font-size: 16px;
+
+      &:hover {
+        color: #fff;
+      }
+      &:hover:first-of-type {
+        background-color: #55acee;
+      }
+      &:hover:nth-child(2) {
+        background-color: #3b5998;
+      }
+      &:hover:nth-child(3) {
+        background-color: #cc3732;
+      }
+      &:hover:nth-child(4) {
+        background-color: #cc2127;
+      }
+      &:hover:last-child {
+        background-color: #565656;
+      }
+    }
+  }
+}
+.related-inner {
+  .related-img {
+    overflow: hidden;
+    img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 8px;
+      bottom: -8px;
+      @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+      background-color: $primary_color;
+    }
+  }
+
+  a {
+    margin: 10px 0;
+  }
+  &:hover .related-img::before {
+    bottom: 0;
+  }
+}

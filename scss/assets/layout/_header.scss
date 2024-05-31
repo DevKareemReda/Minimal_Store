@@ -133,7 +133,7 @@
     }
   }
   .sm-column {
-    @media screen and (max-width: 333px) {
+    @media screen and (max-width: 383px) {
       flex-direction: column !important;
     }
   }
@@ -142,6 +142,12 @@
     > i {
       cursor: pointer;
       padding: 8px 11px;
+      @media screen and (max-width: 383px) {
+        margin-left: 38px;
+      }
+      @media screen and (max-width: 290px) {
+        margin-left: 0;
+      }
       @media screen and (min-width: 992px) {
         display: none;
       }
@@ -161,6 +167,9 @@
   .search {
     position: relative;
     width: 240px;
+    @media screen and (max-width: 290px) {
+      margin-left: 0 !important;
+    }
     @media screen and (max-width: 991px) {
       right: 0;
       left: 0;
@@ -216,7 +225,7 @@
   margin-left: 50px;
   margin-top: 5px;
   position: relative;
-  @media screen and (max-width: 333px) {
+  @media screen and (max-width: 290px) {
     margin-left: 0 !important;
   }
 
@@ -311,7 +320,7 @@
     .woocommerce::-webkit-scrollbar {
       width: 1px;
     }
-    
+
     .woocommerce::-webkit-scrollbar-thumb {
       background: #c3a376;
       border-radius: 100px;

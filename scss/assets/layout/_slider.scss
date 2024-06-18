@@ -24,16 +24,12 @@
           opacity: 1;
         }
       }
-      
-      img {
-        object-fit: cover;
-        max-width: 100%;
-      }
     }
     .slider-caption {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      @include vendor(webkit moz o ms, transform, translateY(-50%));
       &.left {
         left: 14%;
         text-align: left;
@@ -54,6 +50,7 @@
       }
       .headline {
         color: #0a0a0a;
+        font-size: 28px;
         @media screen and (max-width: 576px) {
           font-size: 20px;
         }
@@ -72,7 +69,7 @@
     .slider-arrow {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      @include vendor(webkit moz o ms, transform, translateY(-50%));
       @media screen and (max-width: 400px) {
         position: absolute;
         top: 90%;

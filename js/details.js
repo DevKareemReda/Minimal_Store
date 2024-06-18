@@ -154,7 +154,7 @@ function showDetailsProducts() {
   let getId = store.find((el) => el.id === +openDetails);
   const { images, title, price, description, rating, categories } = getId;
   let html = "";
-  html = `
+  html += `
   <div class="col-md-8 d-flex flex-md-row flex-column-reverse">
   <ul class="d-md-block d-flex list-images">
   <li><img src="${images[0]}"
@@ -217,7 +217,6 @@ function showDetailsProducts() {
 `;
   document.querySelector(".details .responsive").innerHTML = html;
 }
-
 showDetailsProducts();
 
 let openSlider = document.querySelector(".details .fa-magnifying-glass");
@@ -336,8 +335,8 @@ for (let i = 0; i < filterId.length - 4; i++) {
   html = `
   <div class="col-md-3 col-sm-6 col-12">
     <div class="shop-items">
-      <img src="${images[0]}"alt="shop" />
-      <img src="${images[1]}" alt="shop" class="img-hover" />
+      <img src="${images[0]}" loading="lazy" alt="shop" />
+      <img src="${images[1]}" loading="lazy" alt="shop" class="img-hover" />
       <div class="d-flex flex-column shop-details text-center py-3">
         <h3 class="mb-2">${title}</h3>
         <span class="woocommerce-price-amount">

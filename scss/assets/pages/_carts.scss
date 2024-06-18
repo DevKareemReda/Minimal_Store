@@ -1,6 +1,6 @@
 /* _____ style carts _____ */
 .cart {
-  table {
+  table#table-carts {
     width: 100%;
     border-collapse: collapse;
     tr {
@@ -28,13 +28,18 @@
       }
     }
     tbody {
-      &:first-of-type td {
-        border-top: 0;
-      }
-      @media screen and (max-width: 992px) {
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        &:nth-child(odd) {
-          background-color: rgba(0,0,0,.025);
+      tr {
+        &:first-of-type td {
+          border-top: 0;
+        }
+        &:last-of-type {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        @media screen and (max-width: 992px) {
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          &:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.025);
+          }
         }
       }
       td {
@@ -93,11 +98,14 @@
         a {
           color: #000;
           font-weight: bold;
+          width: 110px;
+          text-align: left;
           &:hover {
             color: $primary_hover;
           }
           @media screen and (max-width: 992px) {
             margin-top: -15px;
+            text-align: right;
           }
         }
       }
@@ -110,10 +118,82 @@
       }
       .amount {
         float: none;
+        font-size: 18px;
+        font-weight: 400;
         @media screen and (max-width: 992px) {
           float: right;
         }
       }
     }
   }
+  .coupon {
+    input {
+      padding: 17px 10px;
+      outline: none;
+      border-radius: 3px;
+      border: 1px solid #d9d9d9;
+      width: calc(100% - 184px);
+      @media screen and (max-width: 400px) {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    }
+    button {
+      @media screen and (max-width: 400px) {
+        width: 100%;
+      }
+    }
+  }
+  .cart-total {
+    padding: 70px 50px;
+    background-color: #fafafa;
+    h2 {
+      font-weight: 500;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      tr:first-child {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      th,
+      td {
+        padding: 10px;
+      }
+      th {
+        text-align: left;
+      }
+      td {
+        text-align: right;
+      }
+      .carts-sutotal {
+        th {
+          font-weight: 600;
+        }
+        td {
+          font-size: 13px;
+        }
+      }
+      .order-total {
+        font-size: 16px;
+        color: #000;
+      }
+    }
+    .proceed-checkout {
+      a {
+        font-weight: 700;
+        font-size: 14px;
+        padding: 15px 35px;
+        text-transform: uppercase;
+        text-shadow: none;
+        border-radius: 3px;
+        box-shadow: none;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 30px;
+      }
+    }
+  }
 }
+

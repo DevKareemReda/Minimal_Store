@@ -1,0 +1,78 @@
+label:not(.create label) {
+  color: #000;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  &:not(label[for="remeber"], label[for="company"], label[for="text"])::after {
+    content: "*";
+    position: absolute;
+    margin-left: 3px;
+    color: #f00;
+    font-weight: 700;
+    cursor: help;
+  }
+}
+
+label.text-danger {
+  color: #a00 !important;
+}
+
+.main-input {
+  padding-left: 10px;
+  padding-right: 50px;
+  color: #555;
+  height: 38px;
+  width: 100%;
+  outline: none;
+  font-size: 12px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+input[type="number"] {
+  height: 52px;
+  font-size: 12px;
+  border: 1px solid #eaeaea;
+  outline: none;
+  padding: 2px;
+  width: 65px;
+  text-align: center;
+  color: inherit;
+  margin-right: 5px;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+}
+
+.form-style {
+  width: 100%;
+  padding: 17px 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  color: #787878;
+  font-size: 14px;
+  &:hover {
+    border: 1px solid #bababa;
+  }
+}
+
+.btn-styling {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 16px 35px !important;
+  text-transform: uppercase;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  cursor: pointer;
+  background-color: transparent;
+  &:hover {
+    opacity: 0.8;
+  }
+}

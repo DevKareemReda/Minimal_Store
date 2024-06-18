@@ -99,39 +99,39 @@ function showReadMore() {
     const { images, title, description, date, publish } = el;
     let html = "";
     html = `
-        <div class="col-md-8 text-center mb-5 mx-auto section">
-        <h3 class="main-head">${title}</h3>
-        </div>
-        <div class="col-md-12">
-        <div class="blogMore-img position-relative">
-        <img src="${images[0]}"
-        class="img-fluid" alt="Not Found">
-        <div class="blogMore-details d-flex align-items-center">
-        <img src="${images[1]}"
-        alt="Not Found">
-        <ul class="ms-4">
-        <li><a href="#">danny</a></li>
-        <li>${date} / ${publish} <a href="#">NEWS</a></li>
-        </ul>
-        </div>
-        </div>
-        <div class="blogMore-caption">
-        <h3 class="main-head">${title}</h3>
-        <p>${description[0]}</p>
-        <br>
-        <p>${description[1]}</p>
-        <br>
-        <p>${description[2]}</p>
-        <div class="social">
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-        <a href="#"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-        </div>
-        </div>
-        `;
+      <div class="col-md-8 text-center mb-5 mx-auto section">
+      <h3 class="main-head">${title}</h3>
+      </div>
+      <div class="col-md-12">
+      <div class="blogMore-img position-relative">
+      <img src="${images[0]}"
+      class="img-fluid" loading="lazy" alt="Not Found">
+      <div class="blogMore-details d-flex align-items-center">
+      <img src="${images[1]}"
+      loading="lazy" alt="Not Found">
+      <ul class="ms-4">
+      <li><a href="#">danny</a></li>
+      <li>${date} / ${publish} <a href="#">NEWS</a></li>
+      </ul>
+      </div>
+      </div>
+      <div class="blogMore-caption">
+      <h3 class="main-head">${title}</h3>
+      <p>${description[0]}</p>
+      <br>
+      <p>${description[1]}</p>
+      <br>
+      <p>${description[2]}</p>
+      <div class="social">
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+      <a href="#"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      </div>
+      </div>
+      `;
     document.querySelector(".blog-more").innerHTML = html;
   });
 }
@@ -149,7 +149,7 @@ for (let i = 0; i < filterTitle.length - 2; i++) {
     <div class="related-inner">
     <div class="related-img position-relative">
     <img src="${images[0]}"
-    class="img-fluid" alt="Not Found">
+    class="img-fluid" loading="lazy" alt="Not Found">
     </div>
     <a href="blogMore.html?title=${title
       .split(" ")
@@ -157,7 +157,6 @@ for (let i = 0; i < filterTitle.length - 2; i++) {
       .toLowerCase()}">${title}</a>
     </div>
     </div>
-
   `;
   document.querySelector(".related-parent").innerHTML += html;
 }

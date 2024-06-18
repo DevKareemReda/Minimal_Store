@@ -1,0 +1,19 @@
+/* _____ style Contact _____ */
+.contact-image {
+  background: url("../images/contact.jpg") center center / cover no-repeat;
+  min-height: 480px;
+  @media screen and (max-width: 768px) {
+    min-height: 300px;
+  }
+}
+
+.contact-details {
+  padding-left: 80px;
+  line-height: 26px;
+  @media screen and (max-width: 768px) {
+    padding-left: 0;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}

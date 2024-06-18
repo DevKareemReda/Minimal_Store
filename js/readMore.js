@@ -92,7 +92,7 @@ ReadMore.map((el) => {
     <div class="col-lg-4 col-sm-6">
     <div class="blog-inner">
     <div class="overlay-img">
-    <img src="${images[0]}" alt="post_01" class="img-fluid">
+    <img src="${images[0]}" loading="lazy" alt="post_01" class="img-fluid">
     <div class="overlay-inner">
     <a href="blogMore.html?title=${title.split(" ").join("/").toLowerCase()}" data-to="read more"></a>
     </div>

@@ -1,5 +1,5 @@
 $(function () {
-  $(".responsive").slick({
+  $(".latest-products").slick({
     arrows: true,
     infinite: true,
     speed: 600,
@@ -218,9 +218,9 @@ for (let i = 0; i < store.length - 3; i++) {
   let html = "";
   html = `
   <div class="col-lg-3">
-  <div class="shop-items">
-  <img src="${images[0]}"alt="shop" />
-  <img src="${images[1]}" alt="shop" class="img-hover" />
+  <div class="shop-items" >
+  <img src="${images[0]}" loading="lazy" alt="shop" />
+  <img src="${images[1]}" loading="lazy" alt="shop" class="img-hover" />
   <div class="d-flex flex-column shop-details text-center py-3">
   <h3 class="mb-2">${title}</h3>
   <span class="woocommerce-price-amount">
@@ -233,5 +233,5 @@ for (let i = 0; i < store.length - 3; i++) {
   </div>
   </div>
   `;
-  document.querySelector(".latest .responsive").innerHTML += html;
+  document.querySelector(".latest .latest-products").innerHTML += html;
 }

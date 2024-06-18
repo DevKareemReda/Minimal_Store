@@ -159,10 +159,12 @@ store.map((el) => {
   <div class="shop-items">
   <img
   src="${images[0]}"
+  loading="lazy"
   alt="shop"
   />
   <img
   src="${images[1]}"
+  loading="lazy"
   alt="shop"
   class="img-hover"
   />

@@ -18,7 +18,7 @@ body {
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
 }
 
 a {
@@ -29,7 +29,10 @@ a {
     color: $primary_color;
   }
 }
-
+p{
+  
+  line-height: 26px;
+}
 span,
 a {
   display: inline-block;
@@ -39,25 +42,15 @@ img {
   vertical-align: middle;
 }
 
-.main-input {
-  padding-left: 10px;
-  padding-right: 50px;
-  color: #555;
-  height: 38px;
-  width: 100%;
-  outline: none;
-  font-size: 12px;
-  font-family: inherit;
-  border: none;
-  border-bottom: 1px solid #ddd;
-}
-
 h1,
 h2,
-h3,
-h4 {
-  font-size: 28px;
+h3
+ {
   font-weight: 400;
+}
+
+h3 {
+  font-size: 20px;
 }
 
 .main-style {
@@ -76,8 +69,11 @@ h4 {
   font-weight: 600;
 }
 
-p {
-  line-height: 26px;
+.bg-primary {
+  background-color: #a7b9c3;
+}
+.bg-danger {
+  background-color: #faac9b;
 }
 
 .section {
@@ -92,8 +88,16 @@ p {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-right {
-  text-align: right;
+  text-align: right !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 .position-relative {
@@ -142,6 +146,7 @@ p {
     h3 {
       @include vendor(webkit moz o, transition, 0.2s ease-in-out);
       font-size: 14px;
+      color: #000;
     }
     .kw-actions {
       position: absolute;
@@ -183,22 +188,4 @@ p {
   &:hover .shop-details h3 {
     color: $primary_hover;
   }
-  .reviews {
-    .fa-star {
-      color: #d3ced2;
-      font-size: 10px;
-    }
-  }
-}
-
-input[type="number"] {
-  height: 52px;
-  font-size: 12px;
-  border: 1px solid #eaeaea;
-  outline: none;
-  padding: 2px;
-  width: 65px;
-  text-align: center;
-  color: inherit;
-  margin-right: 5px;
 }

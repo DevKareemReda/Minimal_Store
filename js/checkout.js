@@ -22,7 +22,7 @@ formOne.addEventListener("submit", function (e) {
   if (!valid()) {
     changeCheck.innerHTML = `
     <ul class="woocommerce-error">
-      <li><strong>ERROR: </strong>  The username or password you entered is incorrect. <a href="#" title="Password Lost and Found">Lost your password?</a></li>
+      <li><strong>ERROR: </strong>  The username or password you entered is incorrect. <a href="my-account.html" title="Password Lost and Found">Lost your password?</a></li>
     </ul>`;
     changeCheck.style.display = "block";
   }
@@ -152,7 +152,7 @@ function validPass() {
 }
 changePass.oninput = validPass;
 
-function showProducts() {
+function showCartsProducts() {
   let productStorage = JSON.parse(localStorage.getItem("saved")) || [];
   if (productStorage) {
     let html = "";
@@ -160,23 +160,28 @@ function showProducts() {
       const { title, quantity, price } = el;
       html += `
       <tr>
-        <td class="text-left">
-          <span class="woocommerce-quantity">
-            <span class="woocommerce-title">
-              ${title}
-            </span>
-            <b>× ${quantity}</b>
-          </span>
-        </td>
-        <td class="text-right">£${(price * quantity).toFixed(2)}</td>
+      <td class="text-left">
+      <span class="woocommerce-quantity">
+      <span class="woocommerce-title">
+      ${title}
+      </span>
+      <b>× ${quantity}</b>
+      </span>
+      </td>
+      <td class="text-right">£${(price * quantity).toFixed(2)}</td>
       </tr>
       `;
     });
     document.querySelector(".shop_table tbody").innerHTML = html;
     calcSubTotalPrice(productStorage);
   }
+  
+  let getTable = document.querySelector("table tbody");
+  if (getTable.innerHTML === "")
+    removeEmpty()
+  
 }
-showProducts();
+showCartsProducts();
 
 function calcSubTotalPrice(productStorage) {
   let shopTotal = document.querySelectorAll(".shop_table .total");
@@ -196,7 +201,10 @@ let post = document.getElementById("post");
 let phone = document.getElementById("phone");
 let email = document.getElementById("email");
 
-formThree.addEventListener("submit", function (e) {
+formThree.addEventListener("submit", function (e) {  window.scrollTo({
+  top: 450,
+  behavior: "smooth",
+});
   for (let i = 0; i < checkValid.length; i++) {
     if (checkValid[i].value === "") {
       checkValid[i].classList.add("invalid");
@@ -208,6 +216,14 @@ formThree.addEventListener("submit", function (e) {
     }
   }
 });
+
+
+function removeEmpty() {
+  let checkCarts = document.querySelector(".check-carts");
+  document.querySelector(".shop_table").parentElement.parentElement.style.display = "none"
+  checkCarts.style.cssText = "display: block; position: relative";
+  getTable.style.display = "block"
+}
 
 // var headers = new Headers();
 // headers.append(

@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Chic Reusable Shopping Tote Bag - Sustainable Style for Everyday Errands" />
-    <title>Minimal Store</title>
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/libs/all.min.css" />
-    <link rel="stylesheet" href="css/libs/slick.css" />
-    <link rel="stylesheet" href="css/libs/slick-theme.css" />
-    <link rel="stylesheet" href="css/libs/linearicon.min.css" />
-    <link rel="stylesheet" href="css/libs/bootstrap-grid.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <!--[if lte IE 8]>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chic Reusable Shopping Tote Bag - Sustainable Style for Everyday Errands" />
+  <title>Minimal Store</title>
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/libs/all.min.css" />
+  <link rel="stylesheet" href="css/libs/slick.css" />
+  <link rel="stylesheet" href="css/libs/slick-theme.css" />
+  <link rel="stylesheet" href="css/libs/linearicon.min.css" />
+  <link rel="stylesheet" href="css/libs/bootstrap-grid.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!--[if lte IE 8]>
       <script type="text/javascript">
         var $buoop = {
           vs: { i: 10, f: 25, o: 12.1, s: 7, n: 9 },
@@ -35,13 +35,18 @@
         };
       </script>
     <![endif]-->
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
 
 <body>
 
+  <!-- (((( preloader ))))-->
+  <section class="preloader ">
+    <span class="loader"></span>
+  </section>
+  <!-- ./preloader-->
 
   <!-- _____ header-nav _____ -->
   <header class="header-nav">
@@ -71,10 +76,12 @@
           <div class="search-parent">
             <i class="fa-solid fa-magnifying-glass"></i>
 
-            <div class="search">
-              <input type="text" placeholder="search ..." class="main-input" />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+            <form action="#" method="get" class="search-box">
+              <div class="search">
+                <input type="text" placeholder="search ..." class="main-input" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </form>
           </div>
           <div class="shopping">
             <div class="topnav-drop">
@@ -85,7 +92,7 @@
               </p>
               <div class="woocommerce-buttons main-style">
                 <a href="carts.html" class="btn btn-primary">View cart</a>
-                
+
                 <a href="checkout.html" class="btn btn-light">Checkout</a>
               </div>
             </div>
@@ -120,110 +127,88 @@
   </header>
   <!-- ./mobile-nav -->
 
-    <!-- _____ details _____ -->
-    <section class="details">
-        <div class="container">
-            <div class="row responsive">aaa</div>
+  <!-- _____ details _____ -->
+  <section class="details">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 d-flex flex-md-row flex-column-reverse details-images"></div>
+        <div class="col-md-4 ps-3 details-products"></div>
+        <div class="col-md-12 text-center details-parent py-5"></div>
+      </div>
+    </div>
+  </section>
 
-            <div class="row section">
-                <div class="col-md-12 text-center">
-                    <ul class="d-flex list-footer justify-content-center mb-3">
-                        <li><a href="#" data-tab="one" class="active">Description</a></li>
-                        <li><a href="#" data-tab="two">Additional information</a></li>
-                    </ul>
-                    <div class="tab active" id="one">
-                        <p class="mb-4">Distinctively create client-centered networks whereas technically sound customer
-                            service. Holisticly synergize enabled supply chains through timely innovation. Seamlessly
-                            disseminate flexible vortals without high-payoff innovation.</p>
-
-                        <p>Continually harness reliable products after cross-platform scenarios. Authoritatively
-                            disintermediate economically sound e-business via granular e-commerce. Rapidiously embrace
-                            innovative results without process-centric interfaces. Globally architect economically sound
-                            bandwidth with installed base materials. Uniquely supply wireless niches through
-                            economically sound innovation.</p>
-                    </div>
-                    <table class="tab" id="two">
-                        <tr>
-                            <th>Color</th>
-                            <td>Black, Blue, Grey</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+  <!-- _____ latest _____ -->
+  <section class="latest section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 text-center mb-5 mx-auto">
+          <h3 class="related">Related Products</h3>
         </div>
-    </section>
-
-    <!-- _____ latest _____ -->
-    <section class="latest section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 text-center mb-5 mx-auto">
-                    <h3 class="related">Related Products</h3>
-                </div>
-            </div>
-            <div class="row latest-products">
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mx-auto text-center mt-4">
-                    <a href="shop.html" class="btn btn-primary">Show other products</a>
-                </div>
-            </div>
+      </div>
+      <div class="row latest-products">
+      </div>
+      <div class="row">
+        <div class="col-lg-4 mx-auto text-center mt-4">
+          <a href="shop.html" class="btn btn-primary">Show other products</a>
         </div>
-    </section>
-    <!-- ./latest -->
+      </div>
+    </div>
+  </section>
+  <!-- ./latest -->
 
-    <!-- _____ footer _____ -->
-    <footer class="section">
-        <div class="container mb-5 text-center">
-            <i class="fa-solid fa-angle-up"></i>
+  <!-- _____ footer _____ -->
+  <footer class="section">
+    <div class="container mb-5 text-center">
+      <i class="fa-solid fa-angle-up"></i>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <form action="#" class="form-footer">
+            <input type="email" placeholder="your.address@gamil.com" required class="main-input" />
+            <button class="btn btn-l">subscribe</button>
+          </form>
+          <ul class="social d-flex mb-5 mb-lg-0">
+            <li>
+              <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
+                  class="fa-brands fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
+                  class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
+                  class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
+                  class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
+                  class="fa-brands fa-pinterest-p"></i></a>
+            </li>
+          </ul>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <form action="#" class="form-footer">
-                        <input type="email" placeholder="your.address@gamil.com" required class="main-input" />
-                        <button class="btn btn-l">subscribe</button>
-                    </form>
-                    <ul class="social d-flex mb-5 mb-lg-0">
-                        <li>
-                            <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
-                                    class="fa-brands fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
-                                    class="fa-brands fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
-                                    class="fa-brands fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
-                                    class="fa-brands fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
-                                    class="fa-brands fa-pinterest-p"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-7 ms-auto d-flex justify-content-center justify-content-lg-end align-items-center">
-                    <p>
-                        <span class="dat">@2018</span>. This demo has been created with
-                        <a href="https://themeforest.net/item/kallyas-responsive-multipurpose-wordpress-theme/4091658">Kallyas
-                            WordPress Theme.</a>
-                        All rights reserved.
-                    </p>
-                </div>
-            </div>
+        <div class="col-lg-7 ms-auto d-flex justify-content-center justify-content-lg-end align-items-center">
+          <p>
+            <span class="dat">@2018</span>. This demo has been created with
+            <a href="https://themeforest.net/item/kallyas-responsive-multipurpose-wordpress-theme/4091658">Kallyas
+              WordPress Theme.</a>
+            All rights reserved.
+          </p>
         </div>
-    </footer>
-    <!-- ./footer -->
+      </div>
+    </div>
+  </footer>
+  <!-- ./footer -->
 
-    <!-- ___ all files js ___ -->
-    <script src="js/libs/jquery-3.7.1.min.js"></script>
-    <script src="js/details.js"></script>
-    <script src="js/main.js"></script>
+  <!-- ___ all files js ___ -->
+  <script src="js/libs/jquery-3.7.1.min.js"></script>
+  <script src="js/details.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

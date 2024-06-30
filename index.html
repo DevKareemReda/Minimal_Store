@@ -41,9 +41,15 @@
 </head>
 
 <body>
+  <!-- (((( preloader ))))-->
+  <section class="preloader ">
+    <span class="loader"></span>
+  </section>
+  <!-- ./preloader-->
+
   <!-- _____ header-nav _____ -->
   <header class="header-nav">
-    <div class="container">
+    <div class="container position-relative">
       <div class="row align-items-center">
         <div class="col-sm-5 col">
           <ul class="menu align-content-center d-none d-lg-flex">
@@ -69,10 +75,12 @@
           <div class="search-parent">
             <i class="fa-solid fa-magnifying-glass"></i>
 
-            <div class="search">
-              <input type="text" placeholder="search ..." class="main-input" />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+            <form action="#" method="get" class="search-box">
+              <div class="search">
+                <input type="text" placeholder="search ..." class="main-input" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </form>
           </div>
           <div class="shopping">
             <div class="topnav-drop">
@@ -122,7 +130,7 @@
     <div class="container">
       <div class="slider-items fade">
         <div class="position-relative d-inline-block">
-          <img src="images/slider_03.jpg" loading="lazy" alt="slider_03" class="img-fluid"/>
+          <img src="images/slider_03.jpg" loading="lazy" alt="slider_03" class="img-fluid" />
           <div class="slider-caption left">
             <h3 class="headline mb-3">Casual backpacks</h3>
             <h3 class="headprice">from $69</h3>
@@ -131,7 +139,7 @@
       </div>
       <div class="slider-items">
         <div class="position-relative d-inline-block">
-          <img src="images/slider_04.jpg"loading="lazy" alt="slider_03" class="img-fluid"/>
+          <img src="images/slider_04.jpg" loading="lazy" alt="slider_03" class="img-fluid" />
           <div class="slider-caption right">
             <h3 class="headline mb-3">CMinimalist duffles</h3>
             <h3 class="headprice">from $89</h3>
@@ -157,7 +165,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-7 col mx-auto text-center">
-          <img src="images/badge.png"loading="lazy" alt="badge" class="mb-5" />
+          <img src="images/badge.png" loading="lazy" alt="badge" class="mb-5" />
           <p class="main-style">
             Rapidiously procrastinate proactive supply chains via multimedia
             based niches. Objectively utilize scalable methods of empowerment
@@ -239,8 +247,9 @@
   <!-- ___ all files js ___ -->
   <script src="js/libs/jquery-3.7.1.min.js"></script>
   <script src="js/libs/slick.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/search-result.js"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

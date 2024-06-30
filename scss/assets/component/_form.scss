@@ -4,7 +4,7 @@ label:not(.create label) {
   display: block;
   margin-bottom: 10px;
   position: relative;
-  &:not(label[for="remeber"], label[for="company"], label[for="text"])::after {
+  &:not(label[for="remeber"], label[for="company"],label[for="lost"], label[for="text"])::after {
     content: "*";
     position: absolute;
     margin-left: 3px;
@@ -50,29 +50,23 @@ select {
   outline: none;
 }
 
-.form-style {
+.form-style,
+.form-search {
   width: 100%;
-  padding: 17px 10px;
   border: 1px solid #d8d8d8;
-  border-radius: 3px;
   color: #787878;
   font-size: 14px;
+}
+
+
+.form-style {
+  padding: 17px 10px;
+  border-radius: 3px;
   &:hover {
     border: 1px solid #bababa;
   }
 }
 
-.btn-styling {
-  font-weight: 700;
-  font-size: 14px;
-  padding: 16px 35px !important;
-  text-transform: uppercase;
-  text-shadow: none;
-  border-radius: 3px;
-  box-shadow: none;
-  cursor: pointer;
-  background-color: transparent;
-  &:hover {
-    opacity: 0.8;
-  }
+.form-search {
+  padding: 12px 17px;
 }

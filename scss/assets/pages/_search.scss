@@ -1,0 +1,175 @@
+/* _____ style search _____ */
+.search {
+    .btn-search {
+      position: absolute;
+      right: 0;
+      border: 0;
+      color: #bbb;
+      background-color: transparent;
+      outline: none;
+      height: 100%;
+      padding: 0 20px;
+      font-size: 12px;
+      @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+      cursor: pointer;
+      &:hover {
+        color: #000;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 24px;
+        width: 1px;
+        top: 50%;
+        left: 0;
+        @include vendor(webkit moz o ms, transform, translateY(-50%));
+        border-left: 1px solid #bbb;
+      }
+    }
+  .pages {
+    padding: 10px 0 50px;
+    a {
+      text-transform: capitalize;
+    }
+  }
+  .sidebar {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.15);
+    padding: 20px 15px;
+    .sidebar-title {
+      color: #050505;
+      text-transform: uppercase;
+      font-size: 14px;
+      padding-bottom: 20px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-bottom: 1px solid #ececec;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        border-bottom: 1px solid #c3a376;
+      }
+    }
+    ul.post {
+      li {
+        border-top: 1px solid #e3e3e3;
+      }
+      li {
+        > a {
+          height: 54px;
+          width: 54px;
+          position: relative;
+          img {
+            width: 54px;
+            height: 54px;
+            margin-right: 17px;
+            @include vendor(webkit moz, border-radius, 3px);
+            object-fit: cover;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            @include vendor(webkit moz, border-radius, 3px);
+            box-shadow: inset 0 0 0 3px hsla(0, 0%, 100%, 0.15);
+            @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+          }
+          &:hover::before {
+            box-shadow: 0 0 0 5px #c3a376 inset;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        a {
+          line-height: 1.5;
+        }
+      }
+    }
+    ul.archive {
+      a {
+        color: #747474;
+        &:hover {
+          color: #000;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 8px;
+          height: 2px;
+          background-color: #e1e1e1;
+          top: 50%;
+          left: 0;
+          vertical-align: middle;
+          @include vendor(webkit moz o, transition, 0.15s ease-out);
+        }
+        &:hover::before {
+          width: 13px;
+        }
+      }
+    }
+  }
+  
+  .pagination {
+    @media screen and (max-width: 260px) {
+      flex-wrap: wrap;
+    }
+    li {
+      margin: 0 5px;
+      a {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 12px;
+        font-weight: 600;
+        color: rgab(#000, 0.85);
+        @include vendor(webkit moz, border-radius, 3px);
+        border: 2px solid transparent;
+        &:hover {
+          color: #000;
+        }
+        &.active {
+          color: rgba(#000, 0.5);
+          background: none;
+          border: 2px solid rgba(#000, 0.18);
+          cursor: default;
+        }
+        &.prev {
+          margin-right: 50px;
+        }
+        &.next {
+          margin-left: 50px;
+        }
+        &.prev,
+        &.next {
+          @include vendor(webkit moz o, transition, 0.25s ease-in-out);
+          font-size: 14px;
+          @media screen and (max-width: 350px) {
+            margin-right: 0;
+            margin-left: 0;
+          }
+          &:hover {
+            color: rgba(#000, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+}
+.pagination-page {
+  display: none;
+  &.active {
+    display: flex;
+  }
+}

@@ -6,8 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Chic Reusable Shopping Tote Bag - Sustainable Style for Everyday Errands" />
 	<title>Cart - Minimal Store</title>
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 	<link rel="stylesheet" href="css/libs/all.min.css" />
+	<link rel="stylesheet" href="css/libs/linearicon.min.css">
 	<link rel="stylesheet" href="css/libs/bootstrap-grid.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<!--[if lte IE 8]>
@@ -34,11 +35,16 @@
     <![endif]-->
 	<!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<![endif]-->
 </head>
 
 <body>
 
+  <!-- (((( preloader ))))-->
+  <section class="preloader ">
+    <span class="loader"></span>
+  </section>
+  <!-- ./preloader-->
 	<!-- _____ header-nav _____ -->
 	<header class="header-nav">
 		<div class="container">
@@ -67,10 +73,12 @@
 					<div class="search-parent">
 						<i class="fa-solid fa-magnifying-glass"></i>
 
-						<div class="search">
-							<input type="text" placeholder="search ..." class="main-input" />
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</div>
+            <form action="#" method="get" class="search-box">
+              <div class="search">
+                <input type="text" placeholder="search ..." class="main-input" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </form>
 					</div>
 					<div class="shopping">
 						<div class="topnav-drop">
@@ -115,13 +123,29 @@
 	</header>
 	<!-- ./mobile-nav -->
 
-	<section class="cart section">
+	<!-- _____ carts_____ -->
+	<section class="carts  py-4">
 		<div class="container">
 			<div class="row mb-3">
 				<div class="col-md-8 text-center mb-5 mx-auto">
 					<h3 class="main-head">Cart</h3>
 				</div>
 			</div>
+			<div class="row check-carts">
+				<ul class="woocommerce-info woocommerce-info-icon bg-primary mb-4">
+					<li>Your cart is currently empty.</li>
+				</ul>
+				<a href="shop.html" class="btn btn-light btn-styling">return to shop</a>
+			</div>
+
+
+			<div class="woocommerce-info bg-danger coupon remove-product mb-4">
+
+				<ul class="woocommerce-error">
+					<li>Please enter a coupon code.</li>
+				</ul>
+			</div>
+
 			<table id="table-carts">
 				<thead>
 					<tr>
@@ -133,10 +157,47 @@
 				</thead>
 				<tbody></tbody>
 			</table>
-			<div class="row d-flex justify-content-between align-items-center mt-5 total-price">
+			<div class="row justify-content-between align-items-center mt-5 total-price remove-product">
+				<div class="col-lg-5 mb-5 mb-lg-0">
+					<form action="" class="form-2">
+						<div class="coupon">
+							<div class="loader"></div>
+							<input type="text" name="coupon" id="coupon" placeholder="Coupon code">
+							<button class="btn btn-light btn-styling">apply coupon</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-lg-6">
+					<div class="cart-total">
+						<h2 class="main-head">CART TOTALS</h2>
+						<table>
+							<tr class="carts-sutotal">
+								<th>SUBTOTAL</th>
+								<td>
+									<span class="woocommerce-price-amount total">
+										<span class="woocommerce-currencySymbol">£</span>
+									</span>
+								</td>
+							</tr>
+							<tr class="order-total">
+								<th>TOTAL</th>
+								<td>
+									<span class="woocommerce-price-amount total">
+										<span class="woocommerce-currencySymbol">£</span>
+									</span>
+								</td>
+							</tr>
+						</table>
+						<div class="proceed-checkout">
+							<a href="https://demo.kallyas.net/minimal-store/checkout/" class="btn btn-primary ">
+								Proceed to checkout</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
+	<!-- ./carts -->
 
 
 	<!-- _____ footer _____ -->

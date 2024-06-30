@@ -1,5 +1,8 @@
 /* _____ style carts _____ */
-.cart {
+.carts {
+  .check-carts {
+    display: none;
+  }
   table#table-carts {
     width: 100%;
     border-collapse: collapse;
@@ -32,7 +35,7 @@
         &:first-of-type td {
           border-top: 0;
         }
-        &:last-of-type {
+        &:last-of-type td {
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         @media screen and (max-width: 992px) {
@@ -127,6 +130,12 @@
     }
   }
   .coupon {
+    position: relative;
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
     input {
       padding: 17px 10px;
       outline: none;
@@ -139,6 +148,7 @@
       }
     }
     button {
+      float: right;
       @media screen and (max-width: 400px) {
         width: 100%;
       }
@@ -196,4 +206,3 @@
     }
   }
 }
-

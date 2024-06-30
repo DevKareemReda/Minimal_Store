@@ -1,31 +1,5 @@
 /* _____ style checkout _____ */
 .checkout {
-  .woocommerce-info {
-    border-left: 8px solid rgba(#000, 0.15);
-    padding: 1.4em 1.5em;
-    color: #fff;
-    position: relative;
-    &.check,
-    &.coupon {
-      display: none;
-    }
-    .fa-window-maximize,
-    .fa-circle-exclamation {
-      font-size: 15px;
-      margin-right: 10px;
-    }
-    a {
-      margin-left: 10px;
-      color: #fff;
-      border-bottom: 1px solid rgba(#fff, 0.2);
-      line-height: normal;
-      &:hover {
-        color: #fff;
-        border-bottom: 1px solid rgba(#fff, 0.5);
-      }
-    }
-  }
-
   .woocommerce-form {
     position: relative;
     max-height: 0;
@@ -38,43 +12,6 @@
   }
 
   .woocommerce-items {
-    .loader {
-      width: 0;
-      height: 0;
-      display: inline-block;
-      position: relative;
-      display: none;
-      position: absolute;
-      top: 48%;
-      left: 43%;
-    }
-    .loader::after,
-    .loader::before {
-      content: "";
-      box-sizing: border-box;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: #000;
-      position: absolute;
-      left: 20px;
-      top: -10px;
-      animation: animloader 2s linear infinite both;
-    }
-    .loader::after {
-      animation-delay: 1s;
-    }
-
-    @keyframes animloader {
-      0% {
-        transform: scale(0);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
     form.form-1 {
       .username,
       .pass {
@@ -197,7 +134,7 @@
       }
       th,
       td {
-        padding: 10px 0;
+        padding: 15px 0;
         text-transform: uppercase;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
       }
@@ -249,21 +186,7 @@
       }
     }
   }
-  .woocommerce-error {
-    li {
-      margin-left: 27px;
-    }
-    &::before {
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      content: "\f06a";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 20px;
-      font-size: 14px;
-    }
-  }
+
   .woocommerce-error {
     li {
       margin-left: 27px;
@@ -280,18 +203,10 @@
     }
   }
   
-  .woocommerce-info-icon {
-    li {
-      margin-left: 27px;
-    }
-    &::before {
-      font-family: "Font Awesome 6 Free";
-      content: "\f2d0";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 20px;
-      font-size: 14px;
-    }
-  }
+
+}
+
+
+.check-carts {
+  display: none;
 }

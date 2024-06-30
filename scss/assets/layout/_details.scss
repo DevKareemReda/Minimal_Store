@@ -41,6 +41,7 @@
   }
 
   .details-items {
+    margin-bottom: 20px;
     h2 {
       color: #000;
       font-size: 36px;
@@ -52,29 +53,21 @@
       font-weight: 600;
       margin: 20px 0;
     }
+    p {
+      text-align: justify;
+    }
   }
 
-  form {
-    margin-top: 20px;
-    button {
-      height: 51px;
-      width: calc(100% - 80px);
-      font-family: inherit;
-    }
+  button {
+    height: 51px;
+    width: calc(100% - 80px);
+    float: right;
   }
 
   .details-footer {
     margin-top: 30px;
     font-size: 12px;
 
-    a {
-      color: #000;
-      @include vendor(webkit moz o, transition, 0.1s);
-
-      &:hover {
-        color: $primary_hover;
-      }
-    }
   }
 
   .fa-magnifying-glass {
@@ -119,7 +112,7 @@
       position: relative;
     }
 
-    span {
+    span  {
       line-height: 44px;
     }
 
@@ -128,7 +121,6 @@
         width: 44px;
         height: 44px;
         text-align: center;
-        line-height: 44px;
         font-size: 20px;
         cursor: pointer;
         opacity: 0.75;
@@ -137,9 +129,11 @@
           opacity: 1;
         }
       }
-
-      .zoom {
+      .zoom-in {
         background: url("../images/default-skin.png") -89px 0;
+        &.zoom-out {
+          background: url("../images/default-skin.png") -133px 0;
+        }
       }
 
       .full-screen {
@@ -164,9 +158,7 @@
       cursor: zoom-in;
 
       img {
-        display: none;
         @include vendor(webkit moz o, transition, 0.2s ease-in);
-
         &.zoom {
           transform: scale(1.8);
           cursor: zoom-out;
@@ -203,6 +195,9 @@
 
       &:hover {
         opacity: 1;
+      }
+      @media screen and (max-width: 620px) {
+        filter: brightness(0);
       }
     }
 

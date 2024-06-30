@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Chic Reusable Shopping Tote Bag - Sustainable Style for Everyday Errands" />
-  <title>Blog - Minimal Store</title>
+  <title>Checkout - Minimal Store</title>
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/libs/all.min.css" />
   <link rel="stylesheet" href="css/libs/linearicon.min.css">
@@ -39,7 +39,7 @@
 </head>
 
 <body>
-  
+
   <!-- (((( preloader ))))-->
   <section class="preloader ">
     <span class="loader"></span>
@@ -54,7 +54,7 @@
             <li><a href="index.html">home</a></li>
             <li><a href="shop.html">collection</a></li>
             <li><a href="about.html">about</a></li>
-            <li><a href="blog.html" class="active">blog</a></li>
+            <li><a href="blog.html">blog</a></li>
             <li><a href="contact.html">contact</a></li>
             <div class="close-nav d-lg-none">
               <span class="lnr lnr-cross"></span>
@@ -89,7 +89,7 @@
               </p>
               <div class="woocommerce-buttons main-style">
                 <a href="carts.html" class="btn btn-primary">View cart</a>
-                <a href="checkout.html" class="btn btn-light">Checkout</a>
+                <a href="#" class="btn btn-light">Checkout</a>
               </div>
             </div>
             <span data-count="0">
@@ -111,9 +111,9 @@
     <main>
       <ul class="menu d-flex align-content-center">
         <li><a href="index.html">home</a></li>
-        <li><a href="shop.html">collection</a></li>
+        <li><a href="shop.html" class="active">collection</a></li>
         <li><a href="about.html">about</a></li>
-        <li><a href="blog.html" class="active">blog</a></li>
+        <li><a href="blog.html">blog</a></li>
         <li><a href="contact.html">contact</a></li>
         <div class="close-nav ">
           <span class="lnr lnr-cross"></span>
@@ -123,18 +123,33 @@
   </header>
   <!-- ./mobile-nav -->
 
-  <!-- _____ blog _____ -->
-  <section class="blog py-4">
+  <!-- _____ my-account _____ -->
+  <section class="section">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 text-center mb-5 mx-auto">
-          <h3 class="main-head">Blog</h3>
+        <div class="col-md-8 text-center mb-3 mx-auto">
+          <h3 class="main-head">My account</h3>
+        </div>
+        <div class="col-lg-12 section"><div class="woocommerce-info bg-danger check mb-4"><ul class="woocommerce-error">
+          <li>Enter a username or email address.</li>
+        </ul></div>
+          <form action="#" class="lost-account">
+            <p>Lost your password? Please enter your username or email address. You will receive a link to create a new
+              password via email.</p>
+            <div class="row mt-5">
+              <div class="col-lg-8">
+                <label for="lost">Username or email</label>
+                <input type="text" name="username or email" id="lost" class="form-style">
+                <button type="submit" class="btn btn-light btn-styling mt-3">reset password</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="row blog-parent my-3"></div>
     </div>
   </section>
-  <!-- ./blog -->
+  <!-- ./my-account -->
+
 
   <!-- _____ footer _____ -->
   <footer class="section">
@@ -186,7 +201,7 @@
 
   <!-- ___ all files js ___ -->
   <script src="js/libs/jquery-3.7.1.min.js"></script>
-  <script src="js/readMore.js"></script>
+  <script src="js/my-account.js"></script>
   <script src="js/main.js"></script>
 </body>
 

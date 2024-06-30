@@ -1,7 +1,0 @@
-col-sm-5
-col-sm-2
-col-sm-5
-
-shopping {
-    margin-left: 0; alternate 50px
-}

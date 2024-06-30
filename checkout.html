@@ -6,8 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Chic Reusable Shopping Tote Bag - Sustainable Style for Everyday Errands" />
 	<title>Checkout - Minimal Store</title>
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 	<link rel="stylesheet" href="css/libs/all.min.css" />
+	<link rel="stylesheet" href="css/libs/linearicon.min.css">
 	<link rel="stylesheet" href="css/libs/bootstrap-grid.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<!--[if lte IE 8]>
@@ -39,6 +40,11 @@
 
 <body>
 
+  <!-- (((( preloader ))))-->
+  <section class="preloader ">
+    <span class="loader"></span>
+  </section>
+  <!-- ./preloader-->
 	<!-- _____ header-nav _____ -->
 	<header class="header-nav">
 		<div class="container">
@@ -67,10 +73,12 @@
 					<div class="search-parent">
 						<i class="fa-solid fa-magnifying-glass"></i>
 
-						<div class="search">
-							<input type="text" placeholder="search ..." class="main-input" />
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</div>
+						<form action="#" method="get" class="search-box">
+							<div class="search">
+								<input type="text" placeholder="search ..." class="main-input" />
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</div>
+						</form>
 					</div>
 					<div class="shopping">
 						<div class="topnav-drop">
@@ -117,7 +125,7 @@
 
 
 	<!-- _____ checkout _____ -->
-	<section class="checkout section">
+	<section class="checkout  py-4">
 		<div class="container">
 			<div class="row mb-3">
 				<div class="col-md-8 text-center mb-5 mx-auto">
@@ -153,7 +161,7 @@
 													for="remeber">Remember me</label></p>
 										</div>
 										<div class="col-md-12 mt-sm-3">
-											<a href="#" class="lost">Lost your password?</a>
+											<a href="my-account.html" class="lost">Lost your password?</a>
 										</div>
 									</div>
 								</form>
@@ -206,7 +214,7 @@
 									</div>
 									<div class="col-sm-12 country mt-3">
 										<label for="country">Country / Region </label>
-										<select name="country" id="country" class="form-style" >
+										<select name="country" id="country" class="form-style">
 										</select>
 									</div>
 									<div class="col-sm-12 mt-3">
@@ -245,8 +253,7 @@
 
 									<div class="col-sm-12 password position-relative mt-3">
 										<label for="password" class="text-danger">Create account password</label>
-										<input type="password" name="password" id="password" class="form-style"
-											placeholder="Password">
+										<input type="password" name="password" id="password" class="form-style" placeholder="Password">
 										<i class="fa-regular fa-eye eye"></i>
 
 
@@ -264,34 +271,50 @@
 									placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
 							</div>
 						</div>
-						
-						<table class="shop_table mt-5">
-							<caption class="text-left"><h3 class="main-head pt-5 border-top position-relative mb-5">Your order</h3></caption>
-							<thead>
-								<tr>
-									<th class="text-left" style="border-top: none;">product</th>
-									<th class="text-right" style="border-top: none;">subtotal</th>
-								</tr>
-							</thead>
-							<tbody></tbody>
-							<tfoot>
-								<tr>
-									<th class="text-left">subtotal</th>
-									<th class="text-right total">£0</th>
-								</tr>
-								<tr>
-									<th class="text-left">total</th>
-									<th class="text-right total">£0</th>
-								</tr>
-								</tfoot>
-						</table>
-						<div class="pt-5 mt-5 border-bottom position-relative">
-							<div class="woocommerce-info bg-primary">
-								<i class="fa-regular fa-window-maximize"></i> Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.</a>
+
+						<div class="row">
+							<div class="col-lg-12">
+								<table class="shop_table mt-5">
+									<caption class="text-left">
+										<h3 class="main-head pt-5 border-top position-relative mb-5">Your order</h3>
+									</caption>
+									<thead>
+										<tr>
+											<th class="text-left" style="border-top: none;">product</th>
+											<th class="text-right" style="border-top: none;">subtotal</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+									<tfoot>
+										<tr>
+											<th class="text-left">subtotal</th>
+											<th class="text-right total">£0</th>
+										</tr>
+										<tr>
+											<th class="text-left">total</th>
+											<th class="text-right total">£0</th>
+										</tr>
+									</tfoot>
+								</table>
 							</div>
+						</div>
+						<div class="pt-5 mt-5 border-bottom position-relative">
+							<div class="check-carts">
+								<ul class="woocommerce-info woocommerce-info-icon bg-primary mb-4">
+									<li>Your checkout is currently empty.</li>
+								</ul>
+								<a href="shop.html" class="btn btn-light btn-styling">return to shop</a>
+							</div>
+								<div class="woocommerce-info bg-primary mt-5">
+									<i class="fa-regular fa-window-maximize"></i> Sorry, it seems that there are no available payment
+									methods for your state. Please contact us if you require assistance or wish to make alternate
+									arrangements.</a>
+								</div>
 						</div>
 						<button class="btn btn-primary btn-order mt-5">place order</button>
 					</form>
+
+
 				</div>
 
 			</div>
@@ -350,8 +373,8 @@
 
 	<!-- ___ all files js ___ -->
 	<script src="js/libs/jquery-3.7.1.min.js"></script>
-	<script src="js/main.js"></script>
 	<script src="js/checkout.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>

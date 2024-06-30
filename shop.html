@@ -8,6 +8,7 @@
   <title>Shop - Minimal Store</title>
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/libs/all.min.css" />
+  <link rel="stylesheet" href="css/libs/linearicon.min.css">
   <link rel="stylesheet" href="css/libs/bootstrap-grid.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <!--[if lte IE 8]>
@@ -38,6 +39,11 @@
 </head>
 
 <body>
+  <!-- (((( preloader ))))-->
+  <section class="preloader ">
+    <span class="loader"></span>
+  </section>
+  <!-- ./preloader-->
   <!-- _____ header-nav _____ -->
   <header class="header-nav">
     <div class="container">
@@ -66,10 +72,13 @@
           <div class="search-parent">
             <i class="fa-solid fa-magnifying-glass"></i>
 
-            <div class="search">
-              <input type="text" placeholder="search ..." class="main-input" />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+            <form action="#" method="get" class="search-box">
+              <div class="search">
+                <input type="text" placeholder="search ..." class="main-input" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </form>
+            
           </div>
           <div class="shopping">
             <div class="topnav-drop">
@@ -115,7 +124,7 @@
   <!-- ./mobile-nav -->
 
   <!-- _____ Shop _____ -->
-  <section class="shop section">
+  <section class="shop  py-4">
     <div class="container">
       <div class="row">
         <div class="col-md-8 text-center mb-5 mx-auto">
@@ -128,18 +137,19 @@
         </div>
         <div class="col-sm-6 col-6 text-right column">
           <select name="orderby" class="orderby">
-            <option value="menu_order" selected="selected">
+            <option value="sorting" selected="selected">
               Default sorting
             </option>
             <option value="popularity">Sort by popularity</option>
             <option value="rating">Sort by average rating</option>
-            <option value="date">Sort by latest</option>
-            <option value="price">Sort by price: low to high</option>
-            <option value="price-desc">Sort by price: high to low</option>
+            <option value="latest">Sort by latest</option>
+            <option value="low">Sort by price: low to high</option>
+            <option value="high">Sort by price: high to low</option>
           </select>
         </div>
       </div>
-      <div class="row text-center responsive"></div>
+      <div class="row text-center responsive">
+      </div>
     </div>
   </section>
   <!-- ./Shop -->
@@ -194,7 +204,6 @@
 
   <!-- ___ all files js ___ -->
   <script src="js/libs/jquery-3.7.1.min.js"></script>
-	<script src="js/update.js"></script>
   <script src="js/main.js"></script>
   <script src="js/shop.js"></script>
 </body>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Chic Reusable Shopping Tote Bag - Sustainable Style for Everyday Errands" />
-  <title>Blog - Minimal Store</title>
+  <title>Checkout - Minimal Store</title>
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/libs/all.min.css" />
   <link rel="stylesheet" href="css/libs/linearicon.min.css">
@@ -39,12 +39,12 @@
 </head>
 
 <body>
-  
   <!-- (((( preloader ))))-->
   <section class="preloader ">
     <span class="loader"></span>
   </section>
   <!-- ./preloader-->
+
   <!-- _____ header-nav _____ -->
   <header class="header-nav">
     <div class="container">
@@ -54,7 +54,7 @@
             <li><a href="index.html">home</a></li>
             <li><a href="shop.html">collection</a></li>
             <li><a href="about.html">about</a></li>
-            <li><a href="blog.html" class="active">blog</a></li>
+            <li><a href="blog.html">blog</a></li>
             <li><a href="contact.html">contact</a></li>
             <div class="close-nav d-lg-none">
               <span class="lnr lnr-cross"></span>
@@ -89,7 +89,7 @@
               </p>
               <div class="woocommerce-buttons main-style">
                 <a href="carts.html" class="btn btn-primary">View cart</a>
-                <a href="checkout.html" class="btn btn-light">Checkout</a>
+                <a href="#" class="btn btn-light">Checkout</a>
               </div>
             </div>
             <span data-count="0">
@@ -111,9 +111,9 @@
     <main>
       <ul class="menu d-flex align-content-center">
         <li><a href="index.html">home</a></li>
-        <li><a href="shop.html">collection</a></li>
+        <li><a href="shop.html" class="active">collection</a></li>
         <li><a href="about.html">about</a></li>
-        <li><a href="blog.html" class="active">blog</a></li>
+        <li><a href="blog.html">blog</a></li>
         <li><a href="contact.html">contact</a></li>
         <div class="close-nav ">
           <span class="lnr lnr-cross"></span>
@@ -123,18 +123,86 @@
   </header>
   <!-- ./mobile-nav -->
 
-  <!-- _____ blog _____ -->
-  <section class="blog py-4">
+  <!-- _____ search _____ -->
+  <section class="search section">
     <div class="container">
-      <div class="row">
+
+      <div class="row mb-3">
         <div class="col-md-8 text-center mb-5 mx-auto">
-          <h3 class="main-head">Blog</h3>
+          <h3 class="main-head"><span class="calc-search"></span> search results for:</h3>
         </div>
       </div>
-      <div class="row blog-parent my-3"></div>
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="row">
+            <div class="col-lg-12">
+              <form action="#" method="get" class="search-box">
+                <div class="search position-relative">
+                  <input type="text" name="search" id="search" placeholder="SEARCH.." class="form-search">
+                  <button class="btn-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row pagination-page active" id="pagin-1">
+          </div>
+          <div class="row my-4 pagination-page" id="pagin-2">
+          </div>
+          <div class="row my-4 pagination-page" id="pagin-3">
+          </div>
+          <div class="row">
+            <div class="col-lg-12 mt-5">
+              <ul class="pagination d-flex justify-content-center">
+                <li><a href="#" class="prev"><i class="fa-solid fa-angle-left"></i></a></li>
+                <li class="pagination-count"></li>
+                <li class="pagination-count"></li>
+                <li class="pagination-count"></li>
+                <li><a href="#" class="next"><i class="fa-solid fa-angle-right"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mt-5 mt-lg-0">
+          <div class="row">
+            <div class="col-lg-12">
+              <form action="#">
+                <div class="search-head position-relative">
+                  <input type="text" name="search" id="search" placeholder="SEARCH.." class="form-search">
+                  <button class="btn-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-12 my-4 sidebar">
+              <div class="row">
+                <div class="col-lg-12 ">
+                  <h2 class="sidebar-title">recent posts</h2>
+                  <div class="sidebar-bloger"></div>
+                </div>
+                <div class="col-lg-12">
+                  <h2 class="sidebar-title">archives</h2>
+                  <ul class="archive mb-4">
+                    <li class="py-3 my-2"><a href="#" class="position-relative ps-4">January 2018</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-12">
+                  <h2 class="sidebar-title">archives</h2>
+                  <ul class="archive">
+                    <li class="py-1 mt-4"><a href="#" class="position-relative ps-4">News</a></li>
+                    <li class="py-1 my-2"><a href="#" class="position-relative ps-4">Uncategorized</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <!-- ./blog -->
+  <!-- ./search -->
 
   <!-- _____ footer _____ -->
   <footer class="section">
@@ -148,7 +216,7 @@
             <input type="email" placeholder="your.address@gamil.com" required class="main-input" />
             <button class="btn btn-l">subscribe</button>
           </form>
-          <ul class="social d-flex mb-5 mb-lg-0">
+          <ul class="social d-flex flex-wrap mb-5 mb-lg-0">
             <li>
               <a href="https://github.com/DevKareemReda/Minimal_Store" target="_blank"><i
                   class="fa-brands fa-facebook-f"></i></a>
@@ -186,7 +254,8 @@
 
   <!-- ___ all files js ___ -->
   <script src="js/libs/jquery-3.7.1.min.js"></script>
-  <script src="js/readMore.js"></script>
+  <script src="js/search-result.js"></script>
+  <script src="js/search.js"></script>
   <script src="js/main.js"></script>
 </body>
 

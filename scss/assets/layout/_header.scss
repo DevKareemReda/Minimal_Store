@@ -13,7 +13,6 @@
         padding: 10px;
         font-weight: 400;
         @include vendor(webkit moz o, transition, 0.2s ease-in-out);
-
         &.active,
         &:hover {
           color: #848484;
@@ -104,9 +103,6 @@
       border-bottom: 1px solid #fff;
       @include vendor(webkit moz, box-shadow, 0 3px 7px rgba(0, 0, 0, 0.2));
       display: none;
-      &.active {
-        display: block;
-      }
     }
     @media screen and (max-width: 333px) {
       z-index: 1;
@@ -203,13 +199,14 @@
       overflow-y: scroll;
       display: flex;
       flex-direction: column;
+      justify-content: center;
 
       li {
         margin-bottom: 14px;
       }
       span.close {
         cursor: pointer;
-        color: #c3c3c3;
+        color: #f00;
         font-size: 16px;
         display: block;
         margin-left: auto;
@@ -246,7 +243,7 @@
 
     .woocommerce::-webkit-scrollbar-thumb {
       background: #c3a376;
-      border-radius: 100px;
+      @include vendor(webkit moz, border-radius, 100px);
     }
     .woocommerce-total {
       border-top: 1px solid #ececec;

@@ -16,7 +16,26 @@
 
 .btn-light {
   padding: 11px;
-  margin-left: 8px;
+  // margin-left: 8px;
   color: #242424;
   border: 2px solid #242424;
+}
+
+
+.btn-styling {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 15px 35px !important;
+  text-transform: uppercase;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: transparent;
+  &:hover {
+    opacity: 0.8;
+  }
 }

@@ -152,6 +152,8 @@ function validPass() {
 }
 changePass.oninput = validPass;
 
+  
+let getTable = document.querySelector("table tbody");
 function showCartsProducts() {
   let productStorage = JSON.parse(localStorage.getItem("saved")) || [];
   if (productStorage) {
@@ -175,8 +177,6 @@ function showCartsProducts() {
     document.querySelector(".shop_table tbody").innerHTML = html;
     calcSubTotalPrice(productStorage);
   }
-  
-  let getTable = document.querySelector("table tbody");
   if (getTable.innerHTML === "")
     removeEmpty()
   
@@ -224,38 +224,3 @@ function removeEmpty() {
   checkCarts.style.cssText = "display: block; position: relative";
   getTable.style.display = "block"
 }
-
-// var headers = new Headers();
-// headers.append(
-//   "X-CSCAPI-KEY",
-//   "NHhvOEcyWk50N2Vna3VFTE00bFp3MjFKR0ZEOUhkZlg4RTk1MlJlaA=="
-// );
-// var requestOptions = {
-//   method: "GET",
-//   headers: headers,
-//   redirect: "follow",
-// };
-
-// async function invokeCountriesAPI() {
-//   let countries = `https://countriesnow.space/api/v0.1/countries/states`;
-//   let country = document.querySelector("#country");
-//   let res = await fetch(countries);
-//   let data = await res.json();
-//   data.data.map((el) => {
-//     country.innerHTML += `<option value="${el.iso2}">${el.name}</option>`;
-//   });
-// }
-// invokeCountriesAPI();
-
-// async function invokeStatesAPI() {
-//   let state = document.querySelector("#state");
-//   let states = `https://countriesnow.space/api/v0.1/countries/states`;
-//   let res = await fetch(states);
-//   let data = await res.json();
-//   console.log(data.data[0].states[0]);
-//   for (let i = 0; i < data.data.length; i++) {
-//     console.log(data.data[i].states[i].name);
-//     state.innerHTML += `<option value="${el.states[0]}">${el.states[0].name}</option>`
-//   }
-// }
-// invokeStatesAPI();

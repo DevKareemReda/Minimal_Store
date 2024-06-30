@@ -1,10 +1,3 @@
-// preloader
-let preloader = document.querySelector(".preloader");
-
-window.onload = () => {
-  setTimeout(() => preloader.classList.add("show"), 1500);
-};
-
 // open navbar
 let triggerBar = document.querySelector(".trigger-bar");
 let mobileNav = document.querySelector(".mobile-nav");
@@ -105,7 +98,8 @@ function savedProduct(id, same) {
       location.href.split("/").slice(-1).join("") !== "shop.html" &&
       location.pathname.split("/").slice(-1).join("") !== "shop.html" &&
       location.href.split("/").slice(-1).join("") !== "index.html" &&
-      location.pathname.split("/").slice(-1).join("") !== "index.html"
+      location.pathname.split("/").slice(-1).join("") !== "index.html"&&
+      location.pathname.split("/").slice(-1).join("") !== ""
     ) {
       productsDetails(productStorage);
     }

@@ -3,6 +3,17 @@
   padding: 39px 0;
   position: relative;
   z-index: 999;
+  .logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    pointer-events: none;
+    @media screen and (max-width: 450px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
   .menu {
     li {
       margin: 0 10px;
@@ -89,6 +100,7 @@
   .search {
     position: relative;
     width: 240px;
+    z-index: 44;
     @media screen and (max-width: 290px) {
       margin-left: 0 !important;
     }

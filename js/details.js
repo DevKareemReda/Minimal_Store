@@ -189,9 +189,13 @@ const store = [
 function imageDetails() {
   let openDetails = new URLSearchParams(location.search).get("id");
   let getId = store.find((el) => el.id === +openDetails);
+
+  if (!getId) {
+    window.location.href = "notFound.html";
+  }
+
   const { images, title } = getId;
   document.title = title + " - " + document.title;
-
   let html = "";
   for (let i = 0; i < images.length; i++) {
     html += `
@@ -203,7 +207,7 @@ function imageDetails() {
     }" data-index="${i + 1}" loading="lazy">
     </li>`;
   }
-
+  
   html = `
   <ul class="d-md-block d-flex list-images">
   ${html}

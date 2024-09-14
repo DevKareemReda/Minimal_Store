@@ -1226,6 +1226,7 @@ footer p a:hover {
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+  cursor: pointer;
 }
 @media screen and (max-width: 400px) {
   .shop .column {
@@ -1593,11 +1594,13 @@ footer p a:hover {
   padding: 29px;
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  display: block !important;
-  width: 100%;
-  text-align: left;
 }
 @media screen and (max-width: 992px) {
+  .carts table#table-carts tbody td {
+    display: block !important;
+    width: 100%;
+    text-align: left;
+  }
   .carts table#table-carts tbody td::before {
     content: attr(data-title) ": ";
     font-weight: 700;

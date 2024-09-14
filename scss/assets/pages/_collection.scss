@@ -17,6 +17,7 @@
     background-image: url(../images/select-arrow.svg);
     @include vendor(webkit, appearance, none);
     @include vendor(webkit moz o, transition, all 0.2s ease-out);
+    cursor: pointer;
   }
   @media screen and (max-width: 400px) {
     .column {

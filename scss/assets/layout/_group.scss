@@ -47,12 +47,12 @@
         padding: 6px 10px;
         @include vendor(webkit moz, box-shadow, 0 4px 15px rgba(0, 0, 0, 0.2));
         @include vendor(webkit moz o, transition, 0.2s ease-in-out);
+        color: #fff;
         &.style-1 {
           padding: 6px;
           width: 72px;
           float: right;
         }
-        color: #fff;
         &:hover {
           background-color: #333;
         }

@@ -547,7 +547,6 @@ select {
 
 /* _____ style header-nav _____ */
 .header-nav {
-  padding: 39px 0;
   position: relative;
   z-index: 999;
 }
@@ -1594,13 +1593,11 @@ footer p a:hover {
   padding: 29px;
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: block !important;
+  width: 100%;
+  text-align: left;
 }
 @media screen and (max-width: 992px) {
-  .carts table#table-carts tbody td {
-    display: block !important;
-    width: 100%;
-    text-align: left;
-  }
   .carts table#table-carts tbody td::before {
     content: attr(data-title) ": ";
     font-weight: 700;
